@@ -67,7 +67,11 @@ header {
     top: 0;
     z-index: 999;
 }
-
+@media (max-width:767px) {
+    header {
+        position: relative;
+    }
+}
 header .container {
     display: flex;
     justify-content: space-between;
@@ -187,7 +191,11 @@ header .container ul li a:hover::after {
     z-index: 2;
     text-transform: capitalize;
 }
-
+@media (max-width:767px) {
+    .landing .container {
+        margin-top: 0;
+    }
+}
 .landing .container p:nth-child(1) {
     font-size: 25px;
     font-weight: normal;
@@ -264,7 +272,6 @@ header .container ul li a:hover::after {
     -webkit-border-radius: 15px;
     transition-duration: 0.3s;
 }
-
 .services .container .box:hover {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
