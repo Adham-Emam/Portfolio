@@ -1,7 +1,7 @@
 @use "../layout/breakpoints" as *;
 
 .menu {
-  position: absolute;
+  position: fixed;
   z-index: 100;
   right: 20vw;
   top: 0;
@@ -58,13 +58,13 @@
           margin: 15px 2px 0;
 
           &:nth-child(1) {
-            background-color: var(--red);
+            background-color: var(--green);
           }
           &:nth-child(2) {
-            background-color: var(--orange);
+            background-color: var(--red);
           }
           &:nth-child(3) {
-            background-color: var(--green);
+            background-color: var(--orange);
           }
           &:nth-child(4) {
             background-color: var(--purple);

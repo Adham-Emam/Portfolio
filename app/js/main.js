@@ -89,3 +89,19 @@ colors.forEach((el) => {
     );
   });
 });
+
+// Dynamic age
+var birthday = new Date("07/3/2002");
+var month_diff = Date.now() - birthday.getTime();
+var age_dt = new Date(month_diff);
+var year = age_dt.getUTCFullYear();
+var age = Math.abs(year - 1970);
+
+document.querySelector(".age").innerHTML = age;
+
+// Dynamic Progress Bars
+let skillsProgress = document.querySelectorAll(".skills-progress div span");
+
+skillsProgress.forEach((span) => {
+  span.style.width = span.dataset.progress;
+});

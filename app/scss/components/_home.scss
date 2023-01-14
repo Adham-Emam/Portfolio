@@ -2,12 +2,10 @@
 #home {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr;
-  @media #{$maxSmallMobile} {
-    grid-template-columns: 1fr;
-    margin-top: 50px;
-  }
+  height: 100%;
+
   h1 {
+    margin-top: 50px;
     font-size: 2em;
     color: var(--heading-color);
     @media #{$maxMobile} {
@@ -22,6 +20,7 @@
   }
 
   p {
+    max-width: 800px;
     color: var(--text-color);
     margin: 25px 0 20px;
     line-height: 1.5;
@@ -104,7 +103,7 @@
     }
 
     img {
-      width: 320px;
+      width: 290px;
       aspect-ratio: 3/4;
       object-fit: cover;
       @media #{$maxMedium} {
