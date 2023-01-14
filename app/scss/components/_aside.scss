@@ -1,0 +1,78 @@
+@use "../layout/breakpoints" as *;
+
+aside {
+  background-color: var(--aside-background);
+  box-shadow: 5px 0 15px 0 var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    position: relative;
+    margin: 30px 0 auto;
+    font-size: 2.5em;
+    a {
+      color: var(--heading-color);
+      padding: 15px;
+      font-family: "Moon Dance", "Roboto Mono";
+      font-weight: 900;
+      font-size: 1.5em;
+      @media #{$maxMedium} {
+        font-size: 1em;
+        padding: 5px;
+      }
+      span {
+        @media #{$maxMedium} {
+          display: none;
+        }
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      @media #{$maxMedium} {
+        width: 10px;
+        height: 10px;
+      }
+    }
+    &::before {
+      border-top: 4px solid var(--main-color);
+      border-left: 4px solid var(--main-color);
+      top: 5px;
+      left: 0px;
+    }
+    &::after {
+      border-bottom: 4px solid var(--main-color);
+      border-right: 4px solid var(--main-color);
+      bottom: 5px;
+      right: 0px;
+    }
+  }
+
+  ul {
+    margin-bottom: auto;
+    li {
+      margin: 25px;
+
+      &.active a,
+      &:hover a {
+        color: var(--main-color);
+      }
+
+      a {
+        color: var(--text-color);
+        font-weight: bold;
+      }
+    }
+    span {
+      @media #{$maxMedium} {
+        display: none;
+      }
+    }
+  }
+}

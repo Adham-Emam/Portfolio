@@ -1,0 +1,35 @@
+#about {
+  color: var(--text-color);
+  margin-top: 150px;
+
+  h2 {
+    color: var(--header-color);
+    font-size: 2em;
+    position: relative;
+    margin-bottom: 60px;
+    &::before,
+    &::after {
+      content: "";
+      height: 4px;
+      background-color: var(--main-color);
+      position: absolute;
+      left: 0;
+    }
+    &::before {
+      width: 80px;
+      bottom: -15px;
+    }
+    &::after {
+      width: 40px;
+      bottom: -25px;
+    }
+  }
+  h3 {
+    color: var(--header-color);
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    span {
+      color: var(--main-color);
+    }
+  }
+}
