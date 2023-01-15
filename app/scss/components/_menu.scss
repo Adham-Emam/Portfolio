@@ -10,11 +10,12 @@
   height: 60px;
   .setting,
   .dark-mode {
+    box-shadow: 0px 0px 15px 0px var(--shadow-color);
     width: 44px;
     height: 40px;
     border-radius: 0 0 25px 25px;
-    background-color: var(--text-color);
-    color: var(--body-background);
+    background-color: var(--aside-background);
+    color: var(--heading-color);
     padding-right: 10px;
     font-size: 1.2em;
     margin-left: auto;
@@ -25,7 +26,7 @@
     i {
       padding: 10px;
       cursor: pointer;
-      transition: 0.8s;
+      transition-duration: 0.8s;
     }
     &:hover {
       height: 100%;
@@ -38,8 +39,8 @@
     position: relative;
     .colors {
       width: 100%;
-      background-color: var(--text-color);
-      color: var(--body-background);
+      // background-color: var(--text-color);
+      background-color: var(--aside-background);
       position: absolute;
       left: 50%;
       bottom: calc(100% - 1px);

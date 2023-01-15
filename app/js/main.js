@@ -19,6 +19,12 @@ asideMenu.forEach((li) => {
     asideMenu.forEach((e) => {
       e.classList.remove("active");
     });
+    document.querySelectorAll("section").forEach((section) => {
+      section.classList.add("hidden");
+    });
+    document
+      .querySelector(`section#${el.currentTarget.dataset.active}`)
+      .classList.remove("hidden");
     el.currentTarget.classList.add("active");
   });
 });
@@ -90,7 +96,7 @@ colors.forEach((el) => {
   });
 });
 
-// Dynamic age
+// Dynamic age & start year
 var birthday = new Date("07/3/2002");
 var month_diff = Date.now() - birthday.getTime();
 var age_dt = new Date(month_diff);
@@ -99,9 +105,22 @@ var age = Math.abs(year - 1970);
 
 document.querySelector(".age").innerHTML = age;
 
+var startYear = new Date("07/18/2019");
+var month_diff = Date.now() - startYear.getTime();
+var start_dt = new Date(month_diff);
+var year = start_dt.getUTCFullYear();
+var start = Math.abs(year - 1970);
+document
+  .querySelectorAll(".starting-date")
+  .forEach((el) => (el.innerHTML = start));
+
 // Dynamic Progress Bars
 let skillsProgress = document.querySelectorAll(".skills-progress div span");
 
-skillsProgress.forEach((span) => {
-  span.style.width = span.dataset.progress;
-});
+document
+  .querySelector("[data-active='about']")
+  .addEventListener("click", () => {
+    skillsProgress.forEach((span) => {
+      span.style.width = span.dataset.progress;
+    });
+  });

@@ -13,6 +13,7 @@
     }
     span {
       color: var(--main-color);
+      transition-duration: 1s;
       &:first-child {
         font-family: "Moon Dance", "Roboto Mono";
       }

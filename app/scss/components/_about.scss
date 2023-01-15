@@ -31,6 +31,7 @@
     margin-bottom: 30px;
     span {
       color: var(--main-color);
+      transition: 1s;
     }
     + p {
       width: 90%;
@@ -40,22 +41,20 @@
   }
   .about-content {
     display: grid;
-    grid-template-columns: 2fr 2fr 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     margin: 50px 0 30px;
+    font-size: 0.8em;
 
-    @media #{$maxMedium} {
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
+    @media #{$maxMobile} {
+      grid-template-columns: 1fr;
+      gap: 0;
+      font-size: 0.6em;
     }
 
     > div {
-      @media #{$maxMedium} {
-        grid-column: 1/3;
-      }
       p {
         margin-bottom: 40px;
         position: relative;
@@ -68,38 +67,40 @@
           bottom: -20px;
           left: 0;
         }
-        span {
-          font-weight: 100;
-        }
       }
     }
-    .skills-progress {
-      @media #{$maxMedium} {
-        grid-column: 1/3;
-      }
-      label {
-        margin-bottom: 5px;
-        font-weight: bold;
-      }
-      div {
-        background-color: var(--aside-background);
-        width: 100%;
-        height: 10px;
+  }
+  .skills-progress {
+    label {
+      margin-bottom: 5px;
+      display: block;
+      font-weight: bold;
+    }
+    div {
+      background-color: var(--aside-background);
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: -1;
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        background-color: var(--main-color);
+        display: block;
         border-radius: 5px;
-        margin-bottom: 30px;
-        position: relative;
+        height: 100%;
+        transition: width 3s, background-color 1s;
         z-index: -1;
-        span {
-          position: absolute;
-          top: 0;
-          left: 0;
-          background-color: var(--main-color);
-          display: block;
-          border-radius: 5px;
-          height: 100%;
-          z-index: -1;
-        }
       }
+    }
+  }
+  .btn {
+    @media #{$maxSmallMobile} {
+      font-size: 0.6em;
     }
   }
 }

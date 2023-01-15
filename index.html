@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="icon" href="images/Logo.png" />
+    <link rel="icon" href="images/logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -20,23 +20,23 @@
           <a href="#">A<span>dham</span></a>
         </div>
         <ul>
-          <li class="active">
+          <li class="active" data-active="home">
             <a href="#"><i class="fa-solid fa-home"></i> <span>home</span></a>
           </li>
-          <li>
+          <li data-active="about">
             <a href="#"><i class="fa-solid fa-user"></i> <span>about</span></a>
           </li>
-          <li>
+          <li data-active="services">
             <a href="#"
               ><i class="fa-solid fa-globe"></i> <span>services</span></a
             >
           </li>
-          <li>
+          <li data-active="projects">
             <a href="#"
               ><i class="fa-solid fa-cubes"></i> <span>projects</span></a
             >
           </li>
-          <li>
+          <li data-active="contact">
             <a href="#"
               ><i class="fa-solid fa-comments"></i> <span>contact</span></a
             >
@@ -52,8 +52,9 @@
             I'm a <span>Front-End Developer</span>
           </h1>
           <p>
-            I'm a web developer with an experience of 2 years, A creative
-            developer with innovative ideas, I mainly work with this languages.
+            I'm a web developer with an experience of
+            <span class="starting-date"></span> years, A creative developer with
+            innovative ideas, I mainly work with this languages.
           </p>
           <div class="skills">
             <i class="fa-brands fa-html5" title="HTML 5"></i>
@@ -77,7 +78,8 @@
         <h2>About Me</h2>
         <h3>I'm Adham Hossam and <span>Web Developer</span></h3>
         <p>
-          I started learning Web Developing 2 years ago, Since then It became my
+          I started learning Web Development
+          <span class="starting-date"></span> years ago, Since then It became my
           passion to learn more and gain more experience, Each step I go further
           in my learning process I become much wise about what I'm doing, What I
           like about the web is that everything that you learn has meaning, can
@@ -86,10 +88,6 @@
         <div class="about-content">
           <div>
             <p>
-              <b>Birthday :</b>
-              <span>3 Jul 2002</span>
-            </p>
-            <p>
               <b>Location :</b>
               <span>Egypt</span>
             </p>
@@ -97,8 +95,10 @@
               <b>Freelance :</b>
               <span>Available</span>
             </p>
-          </div>
-          <div>
+            <p>
+              <b>Birthday :</b>
+              <span>3 Jul 2002</span>
+            </p>
             <p><b>Age :</b> <span class="age"></span></p>
             <p><b>Email :</b> <span>adhamh372002@gmail.com</span></p>
             <p><b>Phone :</b> <span>+20 112 800 0832</span></p>
@@ -136,6 +136,27 @@
           class="btn"
           >hire me</a
         >
+        <div class="education">
+          <h3>Education</h3>
+          <div class="timeline">
+            <div>
+              <h4>Bachelor degree in Business Administration</h4>
+              <p>
+                I have Bachelor degree in Business Administration from Cairo
+                University, Graduate in 2024, and while studing I decided to
+                shift my carrer to Web Development
+              </p>
+            </div>
+            <div>
+              <h4>Web Development</h4>
+              <p>
+                I Started learning Web Development since
+                <span class="starting-date"></span> years while studying in
+                collage,
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- End About Section -->
       <!-- start Setting Menu -->
