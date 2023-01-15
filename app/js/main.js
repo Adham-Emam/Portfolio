@@ -105,7 +105,7 @@ var age = Math.abs(year - 1970);
 
 document.querySelector(".age").innerHTML = age;
 
-var startYear = new Date("07/18/2019");
+var startYear = new Date("07/18/2020");
 var month_diff = Date.now() - startYear.getTime();
 var start_dt = new Date(month_diff);
 var year = start_dt.getUTCFullYear();
