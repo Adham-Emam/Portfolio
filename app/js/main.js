@@ -9,6 +9,9 @@ window.addEventListener("load", () => {
     "--main-color",
     window.localStorage.getItem("main-color")
   );
+  document.querySelectorAll("section:not(#projects)").forEach((section) => {
+    section.classList.add("hidden");
+  });
 });
 
 // Aside Menu Active
@@ -55,8 +58,8 @@ function darkMode() {
 function lightMode() {
   sunIcon.classList.remove("active");
   moonIcon.classList.add("active");
-  document.documentElement.style.setProperty("--aside-background", "#eee");
-  document.documentElement.style.setProperty("--body-background", "#fff");
+  document.documentElement.style.setProperty("--body-background", "#eee");
+  document.documentElement.style.setProperty("--aside-background", "#fff");
   document.documentElement.style.setProperty("--heading-color", "#224");
   document.documentElement.style.setProperty("--text-color", "#333");
   document.documentElement.style.setProperty("--shadow-color", "#ccc");
@@ -120,7 +123,9 @@ let skillsProgress = document.querySelectorAll(".skills-progress div span");
 document
   .querySelector("[data-active='about']")
   .addEventListener("click", () => {
-    skillsProgress.forEach((span) => {
-      span.style.width = span.dataset.progress;
-    });
+    setTimeout(() => {
+      skillsProgress.forEach((span) => {
+        span.style.width = span.dataset.progress;
+      });
+    }, 100);
   });

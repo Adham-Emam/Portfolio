@@ -1,6 +1,5 @@
 @use "../layout/breakpoints" as *;
 #about {
-  color: var(--text-color);
   margin-top: 50px;
 
   h3 {
@@ -50,6 +49,7 @@
   }
   .skills-progress {
     label {
+      color: var(--text-color);
       margin-bottom: 5px;
       display: block;
       font-weight: bold;

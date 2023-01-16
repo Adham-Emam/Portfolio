@@ -63,14 +63,14 @@ aside {
     li {
       margin: 25px;
 
-      &.active a,
-      &:hover a {
-        color: var(--main-color);
-      }
-
       a {
         color: var(--text-color);
         font-weight: bold;
+      }
+
+      &.active a,
+      &:hover a {
+        color: var(--main-color);
       }
     }
     span {

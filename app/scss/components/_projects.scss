@@ -1,0 +1,40 @@
+@use "../layout/breakpoints" as *;
+
+#projects {
+  padding-top: 50px;
+
+  > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+
+    .box {
+      background-color: var(--aside-background);
+      border-radius: 25px 25px 0 0;
+      box-shadow: 10px 10px 10px 0 var(--shadow-color);
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+      img {
+        transition: 0.5s;
+        width: 100%;
+        cursor: pointer;
+        aspect-ratio: 16/10;
+      }
+      > div {
+        background-color: var(--aside-background);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+}
