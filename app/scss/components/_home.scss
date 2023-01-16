@@ -1,8 +1,12 @@
 @use "../layout/breakpoints" as *;
 #home {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
+  @media #{$maxMobile} {
+    grid-template-columns: 1fr;
+  }
 
   h1 {
     margin-top: 50px;
