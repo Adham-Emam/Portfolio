@@ -97,6 +97,11 @@ ul {
   width: 40px;
   bottom: -25px;
 }
+@media (max-width:564px) {
+  .section-title {
+    font-size: 1.5em;
+  }
+}
 
 :root {
   --body-background: #eee;
@@ -593,9 +598,18 @@ aside ul li.active a, aside ul li:hover a {
   gap: 20px;
   margin-top: 50px;
 }
+@media (max-width:767.98px) {
+  #projects > div {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #projects > div h4 {
+    font-size: 0.8em;
+  }
+}
 #projects > div .box {
   background-color: var(--aside-background);
-  border-radius: 25px 25px 0 0;
+  border-radius: 15px 15px 0 0;
   -webkit-box-shadow: 10px 10px 10px 0 var(--shadow-color);
           box-shadow: 10px 10px 10px 0 var(--shadow-color);
   overflow: hidden;
@@ -625,6 +639,72 @@ aside ul li.active a, aside ul li:hover a {
           align-items: center;
   position: relative;
   z-index: 1;
+}
+@media (max-width:564px) {
+  #projects > div .box > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+}
+@media (max-width:564px) {
+  .popup {
+    width: 90%;
+  }
+}
+.popup .remove {
+  background-color: var(--red);
+  padding: 15px;
+  color: white;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+}
+@media (max-width:564px) {
+  .popup .remove {
+    padding: 10px;
+    font-size: 0.6em;
+  }
+}
+.popup img {
+  width: 700px;
+  aspect-ratio: 16/10;
+}
+@media (max-width:991.98px) {
+  .popup img {
+    width: 500px;
+  }
+}
+@media (max-width:564px) {
+  .popup img {
+    width: 100%;
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+#contact {
+  padding-top: 50px;
 }
 
 .menu {

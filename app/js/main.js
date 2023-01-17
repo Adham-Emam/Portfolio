@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     "--main-color",
     window.localStorage.getItem("main-color")
   );
-  document.querySelectorAll("section:not(#projects)").forEach((section) => {
+  document.querySelectorAll("section:not(#contact)").forEach((section) => {
     section.classList.add("hidden");
   });
 });
@@ -129,3 +129,38 @@ document
       });
     }, 100);
   });
+
+// Project Img Popup
+let projectImg = document.querySelectorAll("#projects .box img");
+
+projectImg.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    let overlay = document.createElement("div");
+    overlay.className = "overlay";
+    overlay.addEventListener("click", () => {
+      overlay.remove();
+      popup.remove();
+    });
+
+    let removeBtn = document.createElement("span");
+    removeBtn.className = "remove";
+    removeBtn.addEventListener("click", () => {
+      overlay.remove();
+      popup.remove();
+    });
+
+    let removeIcon = document.createElement("i");
+    removeIcon.className = "fa-solid fa-x";
+
+    let popup = document.createElement("div");
+    popup.className = "popup";
+
+    let imgClone = e.currentTarget.cloneNode(true);
+
+    removeBtn.appendChild(removeIcon);
+    popup.appendChild(removeBtn);
+    popup.appendChild(imgClone);
+    document.body.append(overlay);
+    document.body.append(popup);
+  });
+});

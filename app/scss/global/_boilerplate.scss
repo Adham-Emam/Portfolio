@@ -81,4 +81,7 @@ ul {
     width: 40px;
     bottom: -25px;
   }
+  @media #{$maxSmallMobile} {
+    font-size: 1.5em;
+  }
 }

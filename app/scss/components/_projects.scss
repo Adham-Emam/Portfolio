@@ -9,9 +9,15 @@
     gap: 20px;
     margin-top: 50px;
 
+    @media #{$maxMobile} {
+      grid-template-columns: repeat(1, 1fr);
+      h4 {
+        font-size: 0.8em;
+      }
+    }
     .box {
       background-color: var(--aside-background);
-      border-radius: 25px 25px 0 0;
+      border-radius: 15px 15px 0 0;
       box-shadow: 10px 10px 10px 0 var(--shadow-color);
       overflow: hidden;
 
@@ -34,7 +40,54 @@
         align-items: center;
         position: relative;
         z-index: 1;
+        @media #{$maxSmallMobile} {
+          flex-direction: column;
+          gap: 20px;
+        }
       }
     }
   }
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  @media #{$maxSmallMobile} {
+    width: 90%;
+  }
+
+  .remove {
+    background-color: var(--red);
+    padding: 15px;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    @media #{$maxSmallMobile} {
+      padding: 10px;
+      font-size: 0.6em;
+    }
+  }
+  img {
+    width: 700px;
+    aspect-ratio: 16/10;
+    @media #{$maxMedium} {
+      width: 500px;
+    }
+    @media #{$maxSmallMobile} {
+      width: 100%;
+    }
+  }
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
 }
