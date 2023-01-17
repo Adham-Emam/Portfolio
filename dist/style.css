@@ -62,6 +62,7 @@ ul {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
+  border: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -266,6 +267,18 @@ aside ul li.active a, aside ul li:hover a {
 #home h1 span:first-child {
   font-family: "Moon Dance", "Roboto Mono";
 }
+#home h1 span.cursor {
+  display: inline-block;
+  background-color: var(--heading-color);
+  margin-left: -15px;
+  width: 3px;
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+#home h1 span.cursor.typing {
+  -webkit-animation: none;
+          animation: none;
+}
 #home p {
   max-width: 800px;
   margin: 25px 0 20px;
@@ -379,6 +392,41 @@ aside ul li.active a, aside ul li:hover a {
   }
 }
 
+@-webkit-keyframes blink {
+  0% {
+    background-color: var(--heading-color);
+  }
+  49% {
+    background-color: var(--heading-color);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--heading-color);
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--heading-color);
+  }
+  49% {
+    background-color: var(--heading-color);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--heading-color);
+  }
+}
 #about {
   margin-top: 50px;
 }
@@ -705,6 +753,128 @@ aside ul li.active a, aside ul li:hover a {
 
 #contact {
   padding-top: 50px;
+}
+#contact h3 {
+  color: var(--main-color);
+  text-align: center;
+  margin-bottom: 15px;
+}
+#contact h3 + p {
+  text-align: center;
+}
+#contact > div {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (max-width:767.98px) {
+  #contact > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 50px;
+  }
+}
+#contact > div div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+#contact > div div i {
+  color: var(--main-color);
+  font-size: 2em;
+}
+#contact > div div h4 {
+  margin: 15px 0;
+}
+@media (max-width:564px) {
+  #contact > div div p {
+    font-size: 0.8em;
+  }
+}
+#contact form {
+  margin-top: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+#contact form input,
+#contact form textarea {
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid var(--heading-color);
+  color: var(--text-color);
+  caret-color: var(--text-color);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+#contact form input:focus,
+#contact form textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+}
+#contact form input:nth-child(1) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+}
+@media (max-width:767.98px) {
+  #contact form input:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+  }
+}
+#contact form input:nth-child(2) {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4/7;
+}
+@media (max-width:767.98px) {
+  #contact form input:nth-child(2) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+  }
+}
+#contact form input:nth-child(3) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1/7;
+}
+#contact form textarea {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1/7;
+  min-height: 200px;
+  resize: none;
+}
+#contact form .btn {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-column: 3/5;
+}
+@media (max-width:767.98px) {
+  #contact form .btn {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+  }
+}
+#contact form .btn:hover {
+  opacity: 0.8;
 }
 
 .menu {

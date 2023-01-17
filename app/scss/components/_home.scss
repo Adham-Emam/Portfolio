@@ -18,8 +18,19 @@
     span {
       color: var(--main-color);
       transition-duration: 1s;
+
       &:first-child {
         font-family: "Moon Dance", "Roboto Mono";
+      }
+      &.cursor {
+        display: inline-block;
+        background-color: var(--heading-color);
+        margin-left: -15px;
+        width: 3px;
+        animation: blink 1s infinite;
+        &.typing {
+          animation: none;
+        }
       }
     }
   }
@@ -120,5 +131,23 @@
         width: 150px;
       }
     }
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--heading-color);
+  }
+  49% {
+    background-color: var(--heading-color);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--heading-color);
   }
 }

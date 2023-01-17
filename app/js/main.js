@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     "--main-color",
     window.localStorage.getItem("main-color")
   );
-  document.querySelectorAll("section:not(#contact)").forEach((section) => {
+  document.querySelectorAll("section:not(#home)").forEach((section) => {
     section.classList.add("hidden");
   });
 });
@@ -79,6 +79,10 @@ document.addEventListener("click", (e) => {
   }
 });
 
+window.addEventListener("scroll", () => {
+  setting.classList.remove("active");
+});
+
 // Main Color Change
 let colors = document.querySelectorAll(".colors div span");
 
@@ -129,6 +133,21 @@ document
       });
     }, 100);
   });
+document.querySelector("#home .btn").addEventListener("click", () => {
+  document.querySelectorAll("section").forEach((section) => {
+    section.classList.add("hidden");
+  });
+  asideMenu.forEach((li) => {
+    li.classList.remove("active");
+    document.querySelector('[data-active="about"]').classList.add("active");
+  });
+  about.classList.remove("hidden");
+  setTimeout(() => {
+    skillsProgress.forEach((span) => {
+      span.style.width = span.dataset.progress;
+    });
+  }, 100);
+});
 
 // Project Img Popup
 let projectImg = document.querySelectorAll("#projects .box img");
