@@ -1,5 +1,7 @@
 // Window Onload
+let loading = document.querySelector(".loading");
 window.addEventListener("load", () => {
+  loading.remove();
   if (window.localStorage.getItem("mode") == "light") {
     lightMode();
   } else if (window.localStorage.getItem("mode") == "dark") {
@@ -111,15 +113,6 @@ var year = age_dt.getUTCFullYear();
 var age = Math.abs(year - 1970);
 
 document.querySelector(".age").innerHTML = age;
-
-var startYear = new Date("07/18/2020");
-var month_diff = Date.now() - startYear.getTime();
-var start_dt = new Date(month_diff);
-var year = start_dt.getUTCFullYear();
-var start = Math.abs(year - 1970);
-document
-  .querySelectorAll(".starting-date")
-  .forEach((el) => (el.innerHTML = start));
 
 // Dynamic Progress Bars
 let skillsProgress = document.querySelectorAll(".skills-progress div span");
