@@ -136,4 +136,21 @@
       }
     }
   }
+  .socials{
+    margin-top: 75px;
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      a {
+        color: var(--text-color);
+        font-size: 24px;
+        transition-duration: 0.5s;
+        &:hover{
+          color: var(--main-color);
+          font-size: 28px;
+}
+      }
+    }
+  }
 }
