@@ -34,8 +34,8 @@ To set up this portfolio website locally, follow these steps:
 
 To customize this portfolio website for your own use, follow these guidelines:
 
-1. Replace the existing content with your own information. Modify `index.html` and `assets/css/style.css` to reflect your personal details, projects, skills, etc.
-2. Customize the styling by modifying the CSS files in the `assets/css` directory.
+1. Replace the existing content with your own information. Modify `index.html` and `/css/style.css` to reflect your personal details, projects, skills, etc.
+2. Customize the styling by modifying the CSS files in the `/css` directory.
 3. If you want to add more pages or sections, feel free to do so by creating additional HTML files and linking them accordingly.
 4. Test your changes locally to ensure everything looks and works as expected.
 5. Once satisfied, you can deploy the website to your preferred hosting platform.
