@@ -5,96 +5,198 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adham</title>
-    <link rel="icon" type="image/x-icon" href="images/icon.ico"/>
+    <link rel="icon" href="images/icon.ico" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="app/scss/style.css" />
-    <style>
-      
-    </style>
+    <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
     <!-- Start Loading Screen -->
     <div class="loading">
-      <div class="spinner"><i class="fa-brands fa-python fa-spin"></i></div>
+      <div class="image"><img src="images/loading.png" alt="loading..." /></div>
     </div>
     <!-- End Loading Screen -->
-    <div class="container">
-      <!-- Start Aside -->
-      <aside>
-        <div class="logo">
-          <a href="#">A<span>dham</span></a>
+    <!-- Start header -->
+    <header>
+      <div class="container">
+        <div>
+          <div class="logo">
+            <a href="#"><img src="images/logo.png" alt="logo" /></a>
+          </div>
+          <nav>
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#services">services</a>
+            <a href="#contact">contact</a>
+          </nav>
+          <div class="nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <ul>
-          <li class="active" data-active="home">
+        <ul class="nav-menu">
+          <li>
             <a href="#"><i class="fa-solid fa-home"></i> <span>home</span></a>
           </li>
-          <li data-active="about">
-            <a href="#"><i class="fa-solid fa-user"></i> <span>about</span></a>
+          <li>
+            <a href="#about"
+              ><i class="fa-solid fa-user"></i> <span>about</span></a
+            >
           </li>
-          <li data-active="services">
-            <a href="#"
+          <li>
+            <a href="#projects"
+              ><i class="fa-solid fa-globe"></i> <span>projects</span></a
+            >
+          </li>
+          <li>
+            <a href="#services"
               ><i class="fa-solid fa-globe"></i> <span>services</span></a
             >
           </li>
-          <li data-active="contact">
-            <a href="#"
+          <li>
+            <a href="#contact"
               ><i class="fa-solid fa-comments"></i> <span>contact</span></a
             >
           </li>
         </ul>
-      </aside>
-      <!-- End Aside -->
-      <!-- Start Home -->
-      <section id="home">
-        <div>
+      </div>
+    </header>
+    <!-- End header -->
+    <!-- Start Home -->
+    <section class="" id="home">
+      <div class="container">
+        <div class="hero">
           <h1>
             Hello, my name is <span>Adham Emam</span> <br />
             I'm a <span class="auto-type"></span>
             <span class="cursor">&nbsp;</span>
           </h1>
           <p>
-            I'm a web developer with an experience in Front-End and Back-End technologies, A creative developer with innovative ideas, I mainly work with this languages.
+            I'm a web developer with an experience in Front-End and Back-End
+            technologies, A creative developer with innovative ideas, I mainly
+            work with this languages.
           </p>
           <div class="skills">
-            <img width="28" height="28" src="https://img.icons8.com/color/48/html-5--v1.png" alt="html" title="HTML"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/48/css3.png" alt="CSS" title="CSS"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/36/javascript--v1.png" alt="javascript" title="Javascript"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/36/bootstrap--v2.png" alt="bootstrap" title="bootstrap"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/36/sass.png" alt="sass" title="Sass"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/36/tailwindcss.png" alt="Tailwind" title="Tailwind"/>
-            <img width="28" height="28" src="https://img.icons8.com/ios-glyphs/36/33CAF0/react.png" alt="react" title="React"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/36/python--v1.png" alt="python" title="Python"/>
-            <img width="28" height="28" src="https://img.icons8.com/color/36/git.png" alt="git" title="git"/>
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/48/html-5--v1.png"
+              alt="html"
+              title="HTML"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/48/css3.png"
+              alt="CSS"
+              title="CSS"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/36/javascript--v1.png"
+              alt="javascript"
+              title="Javascript"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/36/bootstrap--v2.png"
+              alt="bootstrap"
+              title="Bootstrap"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/36/sass.png"
+              alt="sass"
+              title="SASS"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/36/tailwindcss.png"
+              alt="Tailwind"
+              title="Tailwind"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/ios-glyphs/36/33CAF0/react.png"
+              alt="react"
+              title="React"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/36/python--v1.png"
+              alt="python"
+              title="Python"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/48/django.png"
+              alt="django"
+              title="Django"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/36/git.png"
+              alt="git"
+              title="git"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"
+              alt="adobe-photoshop--v1"
+              title="Photoshop"
+            />
+            <img
+              width="32"
+              height="32"
+              src="https://img.icons8.com/color/48/adobe-illustrator--v1.png"
+              alt="adobe-photoshop--v1"
+              title="Illustrator"
+            />
           </div>
-          <a class="btn" href="#">more about me</a>
+          <a href="#" class="btn">more about me</a>
         </div>
         <div class="image">
-          <img src="images/hero.jpg" alt="" />
+          <div></div>
+          <img src="images/hero.jpg" alt="Hero Image" />
         </div>
-      </section>
-      <!-- End Home -->
-      <!-- Start About Section -->
-      <section id="about">
+      </div>
+    </section>
+    <!-- End Home -->
+    <!-- Start About Section -->
+    <section id="about" class="section">
+      <div class="container">
         <h2 class="section-title">About Me</h2>
-        <h3>I'm Adham Emam and <span>Web Developer</span></h3>
+        <h3>I'm Adham Emam and I'm a <span>Web Developer</span></h3>
         <p>
-
-          I'm a passionate Full Stack Developer with Python and front-end technologies expertise. My journey in the tech world has equipped me with the skills to develop robust applications, solve complex problems, and collaborate on innovative projects.
-          <br>
-          Skills & Specialties:
-              Python Development: Proficient in crafting scalable and efficient Python solutions.
-              Front-end Technologies: Well-versed in HTML, CSS, and JavaScript, ensuring seamless user experiences.
-              Web Development: Experienced in utilizing frameworks like Django and Flask for building dynamic web applications.
-              
-              <br>
-          Current Endeavors:
-          I'm immersing myself in advanced data analysis techniques and methodologies. Keen to engage with professionals passionate about data-driven insights and innovative solutions. Let's connect and explore collaborative opportunities!
-          <br>
-          Let's Connect:
-          I believe in the power of collaboration and continuous learning. Feel free to reach out if you'd like to discuss tech trends, and potential collaborations, or simply share insights.
+          I'm a passionate Full Stack Developer with Python and front-end
+          technologies expertise. My journey in the tech world has equipped me
+          with the skills to develop robust applications, solve complex
+          problems, and collaborate on innovative projects. Skills &
+          Specialties: Python Development: Proficient in crafting scalable and
+          efficient Python solutions. Front-end Technologies: Well-versed in
+          HTML, CSS, and JavaScript, ensuring seamless user experiences. Web
+          Development: Experienced in utilizing frameworks like Django and Flask
+          for building dynamic web applications. Current Endeavors: I'm
+          immersing myself in advanced data analysis techniques and
+          methodologies. Keen to engage with professionals passionate about
+          data-driven insights and innovative solutions. Let's connect and
+          explore collaborative opportunities! Let's Connect: I believe in the
+          power of collaboration and continuous learning. Feel free to reach out
+          if you'd like to discuss tech trends, and potential collaborations, or
+          simply share insights.
         </p>
         <div class="about-content">
           <div>
@@ -129,153 +231,244 @@
             </div>
             <label for="ts">TypeScript</label>
             <div name="ts">
-              <span data-progress="65%"></span>
+              <span data-progress="35%"></span>
             </div>
             <label for="react">React</label>
             <div name="react">
-              <span data-progress="65%"></span>
+              <span data-progress="55%"></span>
             </div>
             <label for="python">Python</label>
             <div name="python">
-              <span data-progress="90%"></span>
+              <span data-progress="85%"></span>
+            </div>
+            <label for="django">Django</label>
+            <div name="django">
+              <span data-progress="65%"></span>
             </div>
           </div>
         </div>
-        <a
-          href="https://www.linkedin.com/in/adham-emam-91935a229/"
-          target="_blank"
-          class="btn"
-          >Contact Me</a
-        >
-        <div class="education">
+        <a href="#contact" class="btn">Contact Me</a>
+        <div class="education section">
           <h3>Education</h3>
           <div class="timeline">
             <div>
               <h4>Business Major | Cairo University 2021-2024</h4>
               <p>
-                Excitedly anticipating graduation from Cairo University's Faculty of Commerce with a focus on business. Eager to leverage my education in future professional endeavors. 
+                Excitedly anticipating graduation from Cairo University's
+                Faculty of Commerce with a focus on business. Eager to leverage
+                my education in future professional endeavors.
               </p>
             </div>
             <div>
               <h4>CS50 Intro to Programming with Python</h4>
               <p>
-                This intensive course provided a comprehensive introduction to computer science and programming using Python. I gained a solid understanding of fundamental concepts, problem-solving strategies, and the ability to translate ideas into functioning code. Through challenging problem sets and engaging projects, I honed my programming skills and developed a logical approach to algorithmic challenges.
+                This intensive course provided a comprehensive introduction to
+                computer science and programming using Python. I gained a solid
+                understanding of fundamental concepts, problem-solving
+                strategies, and the ability to translate ideas into functioning
+                code. Through challenging problem sets and engaging projects, I
+                honed my programming skills and developed a logical approach to
+                algorithmic challenges.
               </p>
             </div>
             <div>
               <h4>CS50 Web Development</h4>
               <p>
-                Building on the foundation of CS50, this course delved into the dynamic world of web development. Covering both front-end and back-end technologies, I acquired the skills necessary to create interactive and efficient web applications. From HTML and CSS to Python and SQL, I explored the full stack, enabling me to design and implement robust, user-friendly websites. These courses have been instrumental in broadening my technical expertise and preparing me for the diverse challenges of the digital 
+                Building on the foundation of CS50, this course delved into the
+                dynamic world of web development. Covering both front-end and
+                back-end technologies, I acquired the skills necessary to create
+                interactive and efficient web applications. From HTML and CSS to
+                Python and SQL, I explored the full stack, enabling me to design
+                and implement robust, user-friendly websites. These courses have
+                been instrumental in broadening my technical expertise and
+                preparing me for the diverse challenges of the digital
               </p>
             </div>
             <div>
               <h4>Freelancing</h4>
               <p>
-                As a freelance web developer, I bring a unique blend of business understanding and technical expertise to every project. Proficient in front-end technologies such as HTML, CSS, and JavaScript, and equipped with back-end skills using Python and SQL, I create dynamic and user-friendly websites.
-                I specialize in delivering tailor-made solutions that not only meet the technical requirements but also align with the client's business goals. From concept to execution, I ensure a seamless and collaborative development process.
+                As a freelance web developer, I bring a unique blend of business
+                understanding and technical expertise to every project.
+                Proficient in front-end technologies such as HTML, CSS, and
+                JavaScript, and equipped with back-end skills using Python and
+                SQL, I create dynamic and user-friendly websites. I specialize
+                in delivering tailor-made solutions that not only meet the
+                technical requirements but also align with the client's business
+                goals. From concept to execution, I ensure a seamless and
+                collaborative development process.
+              </p>
             </div>
           </div>
-        </div>
-        <div class="socials">
-          <h3>Social Links</h3>
-          <div class="links">
-
-            <span><a target="_blank" href="https://github.com/Adham-Emam/Adham-Emam"><i class="fa-brands fa-github"></i></a></span>
-            <span><a target="_blank" href="https://www.linkedin.com/in/adham-emam-91935a229/"><i class="fa-brands fa-linkedin"></i></a></span>
-            <span><a target="_blank" href="https://discordapp.com/users/boundman4888"><i class="fa-brands fa-discord"></i></a></span>
-          </div>
-        </div>
-      </section>
-      <!-- End About Section -->
-      <!-- Start Services Section -->
-      <section id="services">
-        <h2 class="section-title">Services</h2>
-        <div>
-          <div>
-            <i class="fa-solid fa-code"></i>
-            <h3>Custom Website Development</h3>
-            <p>Design and development of responsive, user-friendly websites tailored to clients' needs.<br>
-              Full-stack development, incorporating both front-end and back-end technologies.</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-shop"></i>
-            <h3>E-commerce Solutions</h3>
-            <p>
-              Building and optimizing online stores using platforms like Shopify, WooCommerce, or custom solutions.<br>
-              Integrating payment gateways, managing product catalogs, and enhancing user experience.
-            </p>
-          </div>
-          <div>
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <h3>Web Application Development</h3>
-            <p>
-              Developing interactive and dynamic web applications for specific functions or industries.<br>
-              Utilizing frameworks like Django for back-end development.
-            </p>
-          </div>
-          <div>
-            <i class="fa-regular fa-user"></i>
-            <h3>Portfolio and Blog Websites</h3>
-            <p>
-              Creating personal or business websites to showcase portfolios, blogs, and professional achievements.
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- End Services Section -->
-      <!-- Start Contact Section -->
-      <section id="contact">
-        <h2 class="section-title">Contact</h2>
-        <h3>Have Any Questions?</h3>
-        <p>Don't hesitate to Mail Us</p>
-        <div>
-          <div class="box">
-            <i class="fa-solid fa-phone"></i>
-            <h4>Call Us On</h4>
-            <p>+20 011 2800 0832</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-location-dot"></i>
-            <h4>Our Location</h4>
-            <p>Egypt</p>
-          </div>
-          <div class="box">
-            <i class="fa-solid fa-envelope"></i>
-            <h4>Email</h4>
-            <p>adhamh372002@gmail.com</p>
-          </div>
-        </div>
-        <form action="https://formspree.io/f/xdoqlgvy" method="post">
-          <input type="text" id="name" name="name" placeholder="Name" required />
-          <input type="email" id="email" name="email" placeholder="Email" required />
-          <input type="text" id="subject" name="subject" placeholder="Subject" required />
-          <textarea id="message" name="message" placeholder="Message"></textarea>
-          <button value="submit" class="btn">Send Message</button>
-        </form>
-      </section>
-      <!-- End Contact Section -->
-      <!-- start Setting Menu -->
-      <div class="menu">
-        <div class="setting">
-          <i class="fa-solid fa-paint-roller" id="color-icon"></i>
-          <div class="colors">
-            <div>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        </div>
-        <div class="dark-mode">
-          <i class="active fa-solid fa-moon"></i>
-          <i class="fa-solid fa-sun"></i>
         </div>
       </div>
-      <!-- start Setting Menu -->
+    </section>
+    <!-- End About Section -->
+    <div class="socials">
+      <div class="container">
+        <h3>Social Links</h3>
+        <div class="links">
+          <span
+            ><a
+              target="_blank"
+              href="https://github.com/Adham-Emam/Adham-Emam"
+              ><i class="fa-brands fa-github"></i></a
+          ></span>
+          <span
+            ><a
+              target="_blank"
+              href="https://www.linkedin.com/in/adham-emam-91935a229/"
+              ><i class="fa-brands fa-linkedin"></i></a
+          ></span>
+          <span
+            ><a
+              target="_blank"
+              href="https://discordapp.com/users/boundman4888"
+              ><i class="fa-brands fa-discord"></i></a
+          ></span>
+        </div>
+      </div>
     </div>
-    <script src="app/js/main.js"></script>
-    <script src="app/js/typing.js"></script>
+    <!-- Start Services Section -->
+    <section id="services" class="section">
+      <h2 class="section-title">Services</h2>
+      <div class="container">
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <div class="text">
+            <h3>Custom Website Development</h3>
+            <p>
+              Design and development of responsive, user-friendly websites
+              tailored to clients' needs. Full-stack development, incorporating
+              both front-end and back-end technologies.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-shop"></i>
+          </div>
+          <div class="text">
+            <h3>E-commerce Solutions</h3>
+            <p>
+              Building and optimizing online stores using platforms like
+              Shopify, WooCommerce, or custom solutions. Integrating payment
+              gateways, managing product catalogs, and enhancing user
+              experience.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="text">
+            <h3>Web Application Development</h3>
+            <p>
+              Developing interactive and dynamic web applications for specific
+              functions or industries. Utilizing frameworks like Django for
+              back-end development.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon">
+            <i class="fa-regular fa-user"></i>
+          </div>
+          <div class="text">
+            <h3>Portfolio and Blog Websites</h3>
+            <p>
+              Creating personal or business websites to showcase portfolios,
+              blogs, and professional achievements.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Services Section -->
+    <!-- Start Contact Section -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Contact Us</h2>
+      <h3>Have Any Questions?</h3>
+      <p>Don't hesitate to Mail Us</p>
+      <div class="container">
+        <div class="box">
+          <i class="fa-solid fa-phone"></i>
+          <h4>Call Us On</h4>
+          <p>+20 011 2800 0832</p>
+        </div>
+        <div class="box">
+          <i class="fa-solid fa-location-dot"></i>
+          <h4>Our Location</h4>
+          <p>Egypt</p>
+        </div>
+        <div class="box">
+          <i class="fa-solid fa-envelope"></i>
+          <h4>Email</h4>
+          <p>adhamh372002@gmail.com</p>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/xdoqlgvy" method="post">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="email">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Message"
+          ></textarea>
+          <button value="submit" class="btn">Send Message</button>
+        </div>
+      </form>
+    </section>
+    <!-- End Contact Section -->
+    <!-- Start Footer -->
+    <footer>
+      <div class="container">
+        <p>Made with love by <span>Adham</span>❤️</p>
+        <div class="links">
+          <span
+            ><a target="_blank" href="https://github.com/Adham-Emam/Adham-Emam"
+              ><i class="fa-brands fa-github"></i></a
+          ></span>
+          <span
+            ><a
+              target="_blank"
+              href="https://www.linkedin.com/in/adham-emam-91935a229/"
+              ><i class="fa-brands fa-linkedin"></i></a
+          ></span>
+          <span
+            ><a target="_blank" href="https://discordapp.com/users/boundman4888"
+              ><i class="fa-brands fa-discord"></i></a
+          ></span>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <script src="js/main.js"></script>
+    <script src="js/typing.js"></script>
   </body>
 </html>
