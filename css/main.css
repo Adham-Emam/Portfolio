@@ -109,14 +109,16 @@ a {
   margin-bottom: 40px;
   position: relative;
 }
-.section {
+.hidden {
   opacity: 0;
-  padding-top: 500px !important;
-  transition: padding 3s, opacity 4s;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
 }
-.section.active {
+.show {
   opacity: 1;
-  padding: 0 !important;
+  filter: blur(0px);
+  transform: translateX(0);
 }
 @media (max-width: 577px) {
   .section-title {
@@ -524,7 +526,8 @@ header .nav-menu a:hover {
   display: block;
   border-radius: 5px;
   height: 100%;
-  transition: width 3s, background-color 1s;
+  transition-duration: 3s;
+  transition-delay: 1s;
   z-index: -1;
 }
 #about .education {
@@ -533,7 +536,6 @@ header .nav-menu a:hover {
 #about .education .timeline {
   padding: 50px 20px;
   background-color: var(--section-color);
-  /* padding: 20px; */
   border-radius: 15px;
 }
 #about .education .timeline div {

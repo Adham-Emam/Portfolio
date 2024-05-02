@@ -47,31 +47,19 @@ function toggleScrolledNavbar() {
   }
 }
 
+// // Progress Bars function
 const progressBars = document.querySelector(".skills-progress");
 const bars = document.querySelectorAll(".skills-progress span");
 
-// // Progress Bars function
-function progress() {
-  const progressBarsTop = progressBars.getBoundingClientRect().top;
-
-  const windowHeight = window.innerHeight;
-  if (progressBarsTop < windowHeight) {
-    bars.forEach((el) => {
-      const progressValue = el.getAttribute("data-progress");
-      el.style.width = progressValue;
-    });
-  } else {
-    bars.forEach((el) => {
-      el.style.width = 0;
-    });
-  }
-}
+bars.forEach((el) => {
+  const progressValue = el.getAttribute("data-progress");
+  el.style.width = progressValue;
+});
 
 // Add scroll event listener
 window.addEventListener("scroll", () => {
   toggleFixedNavbar();
   toggleScrolledNavbar();
-  progress();
 });
 
 function calculateAge(birthDate) {
@@ -105,26 +93,16 @@ document.querySelector(".age").innerHTML = age;
 // Select all sections
 const sections = document.querySelectorAll(".section");
 
-// Function to set opacity based on scroll position
-function setOpacity() {
-  sections.forEach((section) => {
-    // Calculate the top position of the section
-    const sectionTop = section.offsetTop;
-    // Calculate the bottom position of the section
-    const sectionBottom = sectionTop + section.offsetHeight;
-    // Calculate the current scroll position
-    const scrollPosition = window.scrollY + window.innerHeight;
-
-    // If the current scroll position is within the section, set opacity to 1, otherwise set it to 0
-    if (scrollPosition >= sectionTop) {
-      section.classList.add("active");
+// Section scroll animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
     } else {
-      section.classList.remove("active");
+      entry.target.classList.remove("show");
     }
   });
-}
+});
 
-// Call the setOpacity function when the page is scrolled
-window.addEventListener("scroll", setOpacity);
-// Call the setOpacity function initially to set opacity for the sections visible on page load
-setOpacity();
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
