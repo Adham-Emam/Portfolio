@@ -1,0 +1,74 @@
+{% extends 'layout.html' %} {% block styles %}
+<style>
+  header,
+  footer {
+    display: none;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .card {
+    background-color: var(--section-color);
+    width: 350px;
+    padding: 50px 20px;
+    border-radius: 15px;
+  }
+  @media (max-width: 400px) {
+    .card {
+      width: 100%;
+    }
+  }
+  .container h2 {
+    color: var(--section-title-color);
+    margin: 30px auto;
+  }
+  form input {
+    background-color: transparent;
+    color: var(--section-title-color);
+    border-radius: 10px;
+    border: 1px solid var(--section-title-color);
+    outline: none;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+  }
+  form input:focus,
+  form input:hover {
+    border: 1px solid var(--second-color);
+  }
+  form input.btn {
+    background-color: var(--main-color);
+    width: fit-content;
+    padding: 5px 30px;
+    border: none;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="container">
+  {% with messages = get_flashed_messages(with_categories=true) %} {% if
+  messages %}
+  <ul class="flashes">
+    {% for category, message in messages %}
+    <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+  <div class="card">
+    <h2>Admin Login</h2>
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div>{{ form.username(class="form-control") }}</div>
+      <div>{{ form.password(class="form-control") }}</div>
+      <div>{{ form.submit(class="btn btn-primary") }}</div>
+    </form>
+  </div>
+</div>
+{% endblock %}

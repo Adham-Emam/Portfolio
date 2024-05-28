@@ -1,0 +1,38 @@
+{% extends 'layout.html' %} {% block content %}
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <h3>Have Any Questions?</h3>
+    <p>Don't hesitate to Mail Us</p>
+    <div>
+      <div class="box">
+        <i class="fa-solid fa-phone"></i>
+        <h4>Call Us On</h4>
+        <p>+20 011 2800 0832</p>
+      </div>
+      <div class="box">
+        <i class="fa-solid fa-location-dot"></i>
+        <h4>Our Location</h4>
+        <p>Egypt</p>
+      </div>
+      <div class="box">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>Email</h4>
+        <p>adhamh372002@gmail.com</p>
+      </div>
+    </div>
+  </div>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="container">
+      <div class="email">
+        {{ form.name(placeholder='Name', class="form-control") }} {{
+        form.email(placeholder='Email', class="form-control") }}
+      </div>
+      {{ form.subject(placeholder='Subject', class="form-control") }} {{
+      form.content(placeholder='Subject', class="form-control") }} {{
+      form.submit(class="btn btn-primary") }}
+    </div>
+  </form>
+</section>
+{% endblock %}
