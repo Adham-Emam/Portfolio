@@ -181,7 +181,8 @@ def admin_dashboard():
     projects = Projects.query.all()
     blogs = BlogPost.query.all()
     messages = Messages.query.all()
-    return render_template('admin_dashboard.html', projects=projects, blogs=blogs, messages=messages)
+    comments = Comments.query.all()
+    return render_template('admin_dashboard.html', projects=projects, blogs=blogs, messages=messages, comments=comments)
 
 
 @ app.route('/admin/add_project', methods=['GET', 'POST'])
@@ -294,6 +295,15 @@ def delete_blog(blog_id):
 def delete_message(message_id):
     message = Messages.query.get(message_id)
     db.session.delete(message)
+    db.session.commit()
+    return redirect(url_for('admin_dashboard'))
+
+
+@ app.route('/admin/delete_comment/<int:comment_id>')
+@ login_required
+def delete_comment(comment_id):
+    comment = Comments.query.get(comment_id)
+    db.session.delete(comment)
     db.session.commit()
     return redirect(url_for('admin_dashboard'))
 

@@ -542,6 +542,11 @@ header .nav-menu a:hover {
     gap: 40px;
     font-size: 0.6em;
   }
+  #about .about-content > div p::after {
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 @media (max-width: 564px) {
   #about .image img {
@@ -789,7 +794,6 @@ footer .container .links i:hover {
   height: 80px;
   animation-delay: 0s;
   background: rgba(0, 190, 200, 0.5);
-
 }
 
 .circles li:nth-child(2) {
@@ -806,7 +810,6 @@ footer .container .links i:hover {
   height: 20px;
   animation-delay: 4s;
   background: rgba(0, 190, 200, 0.5);
-
 }
 
 .circles li:nth-child(4) {
@@ -823,7 +826,6 @@ footer .container .links i:hover {
   height: 20px;
   animation-delay: 0s;
   background: rgba(0, 190, 200, 0.5);
-
 }
 
 .circles li:nth-child(6) {
@@ -838,7 +840,6 @@ footer .container .links i:hover {
   width: 150px;
   height: 150px;
   animation-delay: 7s;
-
 }
 
 .circles li:nth-child(8) {
@@ -856,7 +857,6 @@ footer .container .links i:hover {
   animation-delay: 2s;
   animation-duration: 35s;
   background: rgba(0, 190, 200, 0.5);
-
 }
 
 .circles li:nth-child(10) {

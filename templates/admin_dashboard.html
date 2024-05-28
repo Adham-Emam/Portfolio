@@ -92,11 +92,13 @@
     padding: 0 20px;
     border-radius: 20px;
   }
+  .comments .card,
   .messages .card {
     display: block;
     padding: 20px;
     line-height: 1.5;
   }
+  .messages .card .card-links,
   .messages .card i {
     position: absolute;
     top: 20px;
@@ -195,6 +197,31 @@
     </div>
     {% endfor %} {% else %}
     <p>No message sent.</p>
+    {% endif %}
+  </div>
+  <div class="card-head">
+    <h2>Comments</h2>
+  </div>
+  <div class="messages">
+    {% if comments %} {% for comment in comments %}
+    <div class="card">
+      <div>
+        <span>{{comment.date_posted}}</span>
+        <h3>{{ comment.name }}</h3>
+        <span>Blog ID: {{ comment.blog_id }}</span>
+      </div>
+      <p>{{ comment.comment }}</p>
+      <div class="card-links">
+        <a href="{{ url_for('blog_page', blog_id=comment.blog_id) }}">
+          <i class="fa-solid fa-link"></i>
+        </a>
+        <a href="{{ url_for('delete_comment', comment_id=comment.id) }}">
+          <i class="fa-solid fa-x"></i>
+        </a>
+      </div>
+    </div>
+    {% endfor %} {% else %}
+    <p>No comment sent.</p>
     {% endif %}
   </div>
 </div>
