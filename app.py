@@ -35,7 +35,6 @@ def error_handler(error):
     return render_template('error.html', error=error), error.code
 
 
-
 # Function to format the time difference
 def format_time_difference(td):
     days = td.days
@@ -221,22 +220,14 @@ def edit_project(project_id):
 
     if request.method == 'GET':
         form.title.data = project.title
-        if project.img_url:
-            form.img_url.data = project.img_url
-
-        if project.description:
-            form.description.data = project.description
-
+        form.img_url.data = project.img_url
+        form.description.data = project.description
         form.project_url.data = project.project_url
 
     if form.validate_on_submit():
         project.title = form.title.data
-        if project.img_url:
-            project.img_url = form.img_url.data
-
-        if project.description:
-            project.description = form.description.data
-
+        project.img_url = form.img_url.data
+        project.description = form.description.data
         project.project_url = form.project_url.data
 
         db.session.commit()
@@ -284,7 +275,6 @@ def edit_blog(blog_id):
         blog.title = form.title.data
         blog.img_url = form.img_url.data
         blog.content = form.content.data
-        
 
         db.session.commit()
         return redirect(url_for('admin_dashboard'))
@@ -327,4 +317,3 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
