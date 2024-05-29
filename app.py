@@ -26,6 +26,16 @@ def create_tables():
         FIRST_REQUEST = False
 
 
+@app.errorhandler(403)
+@app.errorhandler(404)
+@app.errorhandler(405)
+@app.errorhandler(500)
+def error_handler(error):
+    # Render the same template for all errors
+    return render_template('error.html', error=error), error.code
+
+
+
 # Function to format the time difference
 def format_time_difference(td):
     days = td.days
@@ -272,9 +282,9 @@ def edit_blog(blog_id):
 
     if form.validate_on_submit():
         blog.title = form.title.data
-        if blog.img_url:
-            blog.img_url = form.img_url.data
+        blog.img_url = form.img_url.data
         blog.content = form.content.data
+        
 
         db.session.commit()
         return redirect(url_for('admin_dashboard'))

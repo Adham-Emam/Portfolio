@@ -1,0 +1,37 @@
+{% extends 'layout.html' %} 
+
+{% block styles%}
+<style>
+    header,
+    footer{
+        display: none;
+    }
+    .error.container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 0;
+    }
+    .error.container h2 {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    .error.container h2 span {
+        color: var(--main-color);
+    }
+    @media (max-width:576px) {
+        .error.container h2 {
+            font-size: 3rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container error">
+    <h2>Error <span>{{error.code}}</span></h2>
+    <p>{{error.description}}</p>
+</div>
+{% endblock %}
