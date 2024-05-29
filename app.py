@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 from flask import Flask, render_template, url_for, request, flash, session, redirect
 from sqlalchemy.sql.expression import func
-from markdown import markdown
+import markdown
 from forms import LoginForm, MessagesForm, BlogsForm, ProjectsForm, CommentsForm
 from models import Messages, Projects, BlogPost, Comments
 from flask_migrate import Migrate
@@ -103,7 +103,7 @@ def blog():
             datetime.now() - blog.date_posted)
 
         # Convert markdown to html
-        blog.content = markdown(blog.content)
+        blog.content = markdown.markdown(blog.content)
 
     return render_template('blog.html', blogs=blogs)
 
@@ -126,7 +126,7 @@ def blog_page(blog_id):
     blog_date_posted = f'{month_name} {date_posted[8:10]}, {date_posted[0:4]},  {time_difference}'
 
     # Convert markdown to html
-    blog.content = markdown(blog.content)
+    blog.content = markdown.markdown(blog.content)
 
     form = CommentsForm(blog_id=blog_id)
     if form.validate_on_submit():

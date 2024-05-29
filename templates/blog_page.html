@@ -107,40 +107,135 @@
     font-size: 2.5rem;
   }
   .content {
-    padding: 50px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 95%;
+    margin: auto;
+    padding: 20px;
   }
-  @media (max-width:600px) {
-    .content {
-      padding: 20px;
-    }
-    
-  }
+  .content h1,
   .content h2,
   .content h3,
-  .content h4 {
-    color: var(--main-color);
-    margin: 30px 0 15px;
-  }
-  .content span {
-    opacity: 0.8;
-  }
-  .content code {
-    display: block;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #2b2b2b;
-    color: #f8f8f8;
-    font-size: 90%;
+  .content h4,
+  .content h5,
+  .content h6 {
+    color: var(--second-color);
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    line-height: 1.2;
   }
 
-  .contetnt pre code {
-    display: block;
-    padding: 1em;
-    overflow-x: auto;
-    background-color: #2b2b2b;
-    color: #f8f8f8;
-    font-size: 85%;
+  .content h1 {
+    font-size: 2em;
   }
+
+  .content h2 {
+    font-size: 1.75em;
+  }
+
+  .content h3 {
+    font-size: 1.5em;
+  }
+
+  .content h4 {
+    font-size: 1.25em;
+  }
+
+  .content p {
+    margin-bottom: 1em;
+  }
+
+  .content a {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+
+  .content a:hover {
+    text-decoration: underline;
+  }
+
+  .content ul,
+  .content ol {
+    margin: 1em 0;
+    padding-left: 1.5em;
+  }
+
+  .content li {
+    margin-bottom: 0.5em;
+  }
+
+  .content blockquote {
+    margin: 1.5em 0;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+    color: #666;
+  }
+
+  pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  code {
+    font-family: "Courier New", Courier, monospace;
+    color: #c7254e;
+    background: #f9f2f4;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+  }
+
+  .keyword {
+    color: #d73a49;
+    font-weight: bold;
+  }
+
+  .function-name {
+    color: #6f42c1;
+  }
+
+  .string {
+    color: #032f62;
+  }
+
+  .comment {
+    color: #6a737d;
+    font-style: italic;
+  }
+
+  .content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em 0;
+  }
+
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+  }
+
+  .content table th,
+  .content table td {
+    border: 1px solid #ddd;
+    padding: 0.75em;
+  }
+
+  .content table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+
   .comments,
   .more-blogs {
     transform: translateY(-60vh);
@@ -180,10 +275,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
   .blog-card .content * {
     font-size: 1rem !important;
     color: var(--text-color) !important;
+    margin-right: auto !important;
     margin: 0;
   }
   .blog-card a {
