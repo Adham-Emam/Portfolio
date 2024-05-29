@@ -173,21 +173,34 @@
   }
 
   pre {
-    background: #f4f4f4;
+    background-color: #0d0d0d;
+    color: var(--background-color);
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px;
-    overflow-x: auto;
+    padding: 30px 20px;
+    position: relative;
+    border-radius: 15px;
+    overflow-x: hidden;
   }
 
+  pre:before {
+    content: attr(class);
+    position: absolute;
+    width: 100%;
+    padding: 10px 20px;
+    top: 0;
+    left: 0;
+    background: #2f2f2f;
+    color: var(--background-color);
+    font-size: 0.8rem;
+  }
   code {
     font-family: "Courier New", Courier, monospace;
-    color: #c7254e;
-    background: #f9f2f4;
+    background-color: #f2f2f2;
+    color: var(--main-color);
     padding: 2px 4px;
     border-radius: 4px;
   }
-
   pre code {
     background: none;
     color: inherit;
@@ -210,6 +223,27 @@
   .comment {
     color: #6a737d;
     font-style: italic;
+  }
+  .copy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 5px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    color: var(--background-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+  }
+
+  .copy-btn:hover {
+    color: var(--main-color);
   }
 
   .content img {
@@ -403,4 +437,51 @@
     </div>
   </div>
 </div>
+{% endblock %} {% block script %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all pre elements and append a copy button with an icon to each
+    document.querySelectorAll("pre").forEach((el) => {
+      const btn = document.createElement("button");
+      btn.classList.add("copy-btn");
+
+      const btnIcon = document.createElement("i");
+      btnIcon.classList.add("fa", "fa-clone"); // Updated class here
+
+      btn.textContent = "Copy code";
+      btn.appendChild(btnIcon);
+      el.appendChild(btn);
+    });
+
+    // Add event listeners to copy buttons
+    const copyButtons = document.querySelectorAll(".copy-btn");
+
+    copyButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const code = button.previousElementSibling.innerText;
+        navigator.clipboard
+          .writeText(code)
+          .then(() => {
+            button.textContent = "Copied!";
+            // Toggle the icon class after 2 seconds
+            setTimeout(() => {
+              button.textContent = "Copy code";
+              const icon = button.querySelector("i");
+              if (icon) {
+                icon.classList.toggle("fa-clone");
+                icon.classList.toggle("fa-check");
+              } else {
+                const btnIcon = document.createElement("i");
+                btnIcon.classList.add("fa", "fa-clone");
+                button.appendChild(btnIcon);
+              }
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      });
+    });
+  });
+</script>
 {% endblock %}
