@@ -21,7 +21,7 @@ env.init_app(app, verbose_mode=True)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 # Set database URI
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize CSRF protection
