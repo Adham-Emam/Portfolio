@@ -91,7 +91,7 @@ def projects():
         # Set time Posted
         project.date_posted = f'{month_name} {date_posted[8:10]}, {date_posted[0:4]}'
 
-    return render_template('projects.html', projects=projects)
+    return render_template('projects.html', projects=projects[::-1])
 
 
 @app.route('/blog')
@@ -104,7 +104,7 @@ def blog():
         # Convert markdown to html
         blog.content = markdown.markdown(blog.content)
 
-    return render_template('blog.html', blogs=blogs)
+    return render_template('blog.html', blogs=blogs[::-1])
 
 
 @app.route('/blog_page/<int:blog_id>', methods=['GET', 'POST'])
@@ -187,10 +187,10 @@ def login():
 @ app.route('/admin/dashboard')
 @ login_required
 def admin_dashboard():
-    projects = Projects.query.all()
-    blogs = BlogPost.query.all()
-    messages = Messages.query.all()
-    comments = Comments.query.all()
+    projects = Projects.query.all()[::-1]
+    blogs = BlogPost.query.all()[::-1]
+    messages = Messages.query.all()[::-1]
+    comments = Comments.query.all()[::-1]
     return render_template('admin_dashboard.html', projects=projects, blogs=blogs, messages=messages, comments=comments)
 
 
