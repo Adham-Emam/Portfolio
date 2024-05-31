@@ -395,10 +395,10 @@
     <div class="blog">
       <div>
         <span>{{ date_posted }}</span>
+        <h2 class="section-title">{{blog.title}}</h2>
         {% if blog.img_url %}
         <img src="{{ blog.img_url }}" alt="Blog Image" />
         {% endif %}
-        <h2 class="section-title">{{blog.title}}</h2>
         <div class="content">{{blog.content|safe }}</div>
       </div>
     </div>
