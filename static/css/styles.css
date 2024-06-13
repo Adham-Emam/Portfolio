@@ -506,7 +506,7 @@ header .nav-menu a:hover {
 }
 #about .education .timeline div {
   margin-left: 50px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   position: relative;
 }
 #about .education .timeline div::before,
@@ -529,8 +529,20 @@ header .nav-menu a:hover {
 }
 #about .education .timeline div h4 {
   color: var(--section-title-color);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 1.2em;
+}
+#about .education .timeline h5 {
+  font-size: 1rem;
+  margin-top: 20px;
+  color: var(--section-title-color);
+}
+#about .education .timeline span {
+  opacity: 0.6;
+}
+#about .education .timeline div ul {
+  list-style: circle;
+  margin-left: 15px;
 }
 #about .education .timeline div p {
   font-weight: 300;

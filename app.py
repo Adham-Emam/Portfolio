@@ -154,7 +154,7 @@ def contact():
                            subject=subject, content=content)
         db.session.add(message)
         db.session.commit()
-        flash('Income added successfully!', 'success')
+        
         return redirect(url_for('contact'))
     return render_template('contact.html', form=form)
 
