@@ -22,16 +22,6 @@ class Projects(db.Model):
                             default=datetime.now)
 
 
-class Messages(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-    email = db.Column(db.String(100), nullable=False)
-    subject = db.Column(db.String(100))
-    content = db.Column(db.String(500), nullable=False)
-    date_sent = db.Column(db.DateTime, nullable=False,
-                          default=datetime.now)
-
-
 class Comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))

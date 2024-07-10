@@ -141,21 +141,9 @@ def blog_page(blog_id):
     return render_template('blog_page.html', blog=blog, date_posted=blog_date_posted, random_blogs=random_blogs, form=form, comments=comments)
 
 
-@ app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = MessagesForm()
-    if form.validate_on_submit():
-        name = form.name.data
-        email = form.email.data
-        subject = form.subject.data
-        content = form.content.data
-
-        message = Messages(name=name, email=email,
-                           subject=subject, content=content)
-        db.session.add(message)
-        db.session.commit()
-        
-        return redirect(url_for('contact'))
     return render_template('contact.html', form=form)
 
 

@@ -24,7 +24,6 @@ class MessagesForm(FlaskForm):
     content = TextAreaField('Message', validators=[DataRequired()], render_kw={
         'placeholder': 'Message'
     })
-    submit = SubmitField('Send Message')
 
 
 class ProjectsForm(FlaskForm):
