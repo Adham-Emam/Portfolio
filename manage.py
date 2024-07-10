@@ -7,7 +7,7 @@ from extensions import db
 from flask_dotenv import DotEnv
 import click
 
-from models import BlogPost, Projects, Messages, Comments
+from models import BlogPost, Projects, Comments
 
 
 app = Flask(__name__)
