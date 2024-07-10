@@ -4,7 +4,7 @@ from flask import Flask, render_template, url_for, request, flash, session, redi
 from sqlalchemy.sql.expression import func
 import markdown
 from forms import LoginForm, MessagesForm, BlogsForm, ProjectsForm, CommentsForm
-from models import Messages, Projects, BlogPost, Comments
+from models import Projects, BlogPost, Comments
 from flask_migrate import Migrate
 from extensions import db
 from functools import wraps
