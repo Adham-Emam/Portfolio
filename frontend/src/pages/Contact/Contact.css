@@ -1,0 +1,108 @@
+/* Start Contact Section */
+#contact {
+  margin: 100px 0 var(--setion-padding);
+}
+#contact h2 {
+  margin-bottom: var(--setion-padding);
+  font-size: 50px;
+}
+#contact h3 {
+  color: var(--section-title-color);
+  text-align: center;
+  margin: 0 auto 15px;
+}
+#contact h3 + p {
+  text-align: center;
+}
+#contact > .container > div {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#contact > .container .box {
+  flex: 1;
+  text-align: center;
+}
+#contact > .container .box i {
+  color: var(--second-color);
+  font-size: 2em;
+}
+#contact > .container .box h4 {
+  margin: 15px auto;
+  color: var(--section-title-color);
+}
+#contact form {
+  background-image: url('../../assets/world-map.svg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: none;
+  padding: 100px 0;
+  margin-top: 60px;
+  z-index: 1;
+}
+#contact form .email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#contact form input,
+#contact form textarea {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--section-title-color);
+  caret-color: var(--main-color);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+#contact form input:focus,
+#contact form textarea:focus {
+  outline: none;
+  border-color: var(--second-color);
+}
+#contact form textarea {
+  min-height: 200px;
+  resize: none;
+}
+#contact form .btn {
+  display: block;
+  margin: auto;
+  padding: 15px 40px;
+  background-image: none;
+  border: none;
+  font-weight: 900;
+  background-color: var(--second-color) !important;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#contact form .btn:hover {
+  background-color: var(--main-color) !important;
+  box-shadow: -2px 2px 2px var(--second-color);
+}
+@media (max-width: 767.98px) {
+  #contact h2 {
+    font-size: 30px;
+  }
+  #contact h3 {
+    font-size: 1.2rem;
+  }
+  #contact > .container > div {
+    flex-direction: column;
+    gap: 50px;
+  }
+  #contact form .email {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+@media (max-width: 564px) {
+  #contact > div div p {
+    font-size: 0.8em;
+  }
+}
+/* End Contact section */

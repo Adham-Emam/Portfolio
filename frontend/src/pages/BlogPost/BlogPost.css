@@ -1,0 +1,332 @@
+.section-img .overlay {
+  background-color: rgba(15, 0, 15, 0.6);
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.section-img {
+  background-image: url("https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center 40%;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.background {
+  background-color: var(--background-color);
+  margin-top: 80vh;
+  min-height: 120vh;
+}
+.post {
+  transform: translateY(-30vh);
+  margin: 0 auto;
+  height: fit-content;
+  background-color: #212;
+  padding: 10px;
+}
+.post > div:nth-child(1) {
+  padding: 50px 20px;
+  border: 1px solid var(--text-color);
+  position: relative;
+  height: 100%;
+  line-height: 2;
+}
+.post > div img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  margin: 20px 0;
+}
+.post > div h2 {
+  margin: 30px 0 10px;
+}
+@media (max-width: 991px) {
+  .post {
+    width: 90%;
+  }
+}
+.section-title {
+  font-size: 2.5rem;
+}
+.post .content {
+  line-height: 1.6;
+  color: var(--section-title-color);
+  max-width: 95%;
+  margin: auto;
+  padding: 20px;
+}
+.post .content h1,
+.post .content h2,
+.post .content h3,
+.post .content h4,
+.post .content h5,
+.post .content h6 {
+  color: var(--second-color);
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
+}
+
+.post .content h1 {
+  font-size: 2em;
+}
+
+.post .content h2 {
+  font-size: 1.75em;
+}
+
+.post .content h3 {
+  font-size: 1.5em;
+}
+
+.post .content h4 {
+  font-size: 1.25em;
+}
+
+.post .content p {
+  margin-bottom: 1em;
+}
+
+.post .content a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.post .content a:hover {
+  text-decoration: underline;
+}
+
+.post .content ul,
+.post .content ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.post .content li {
+  margin-bottom: 0.5em;
+}
+
+.post .content blockquote {
+  margin: 1.5em 0;
+  padding: 1em;
+  background-color: #f9f9f9;
+  border-left: 4px solid #ccc;
+  color: #666;
+}
+
+pre {
+  background-color: #0d0d0d;
+  color: var(--background-color);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 60px 20px 30px;
+  position: relative;
+  border-radius: 15px;
+  overflow-x: auto;
+}
+
+pre:before {
+  content: attr(class);
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  background: #2f2f2f;
+  color: var(--section-title-color);
+  text-transform: capitalize;
+  font-size: 0.8rem;
+}
+code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f2f2f2;
+  color: var(--main-color);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+pre code {
+  background: none;
+  color: var(--section-title-color);
+  padding: 0;
+}
+
+.keyword {
+  color: #d73a49;
+  font-weight: bold;
+}
+
+.function-name {
+  color: #6f42c1;
+}
+
+.string {
+  color: #032f62;
+}
+
+.comment {
+  color: #6a737d;
+  font-style: italic;
+}
+.copy-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  color: var(--section-title-color);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.copy-btn:hover {
+  color: var(--main-color);
+}
+
+.post .content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em 0;
+}
+
+.post .content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+
+.post .content table th,
+.post .content table td {
+  border: 1px solid #ddd;
+  padding: 0.75em;
+}
+
+.post .content table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.comments,
+.more-blogs {
+  transform: translateY(-30vh);
+  padding: 0;
+}
+.more-blogs h2 {
+  margin: 50px 0 0;
+}
+.more-blogs > div {
+  min-height: 300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+.blog-card {
+  background-color: #212;
+  padding: 50px 20px 60px;
+  transition-duration: 0.3s;
+  word-wrap: break-word;
+  position: relative;
+  margin-top: 30px;
+  box-shadow: 0 2px 5px var(--second-color);
+}
+.blog-card h3 {
+  margin: 20px 0 10px;
+  color: var(--section-title-color);
+  transition-duration: 0.3s;
+}
+.blog-card span {
+  color: var(--main-color);
+  transition-duration: 0.3s;
+}
+.blog-card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+.blog-card .content * {
+  font-size: 1rem !important;
+  color: var(--text-color) !important;
+  margin-right: auto !important;
+  margin: 0;
+}
+.blog-card a {
+  background-color: var(--main-color);
+  color: var(--background-color);
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  transition-duration: 0.3s;
+  font-weight: bold;
+}
+.blog-card:hover a {
+  background-color: var(--second-color);
+}
+.blog-card:hover {
+  transform: scale(1.02);
+  box-shadow: -2px 2px 10px var(--second-color);
+}
+.blog-card:hover h3 {
+  color: var(--main-color);
+}
+.blog-card:hover span {
+  color: var(--second-color);
+}
+.comments {
+  margin: 50px 0 0 !important;
+  padding: 10px;
+}
+.comments h3 {
+  margin: 20px 10px;
+}
+.comments ul li {
+  border-radius: 12px;
+  padding: 10px 20px 20px;
+  margin: 20px 10px;
+}
+.background form {
+    transform: translateY(-20vh);
+    border: 1px solid var(--text-color);
+  padding: 20px;
+}
+.background form input,
+.background form textarea {
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--text-color);
+  color: var(--section-title-color);
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  resize: none;
+  border-radius: 10px;
+  caret-color: var(--main-color);
+}
+.background input:hover,
+.background input:focus,
+.background textarea:focus,
+.background textarea:hover {
+  border-color: var(--second-color);
+}
+.background form .btn {
+  border: none;
+}

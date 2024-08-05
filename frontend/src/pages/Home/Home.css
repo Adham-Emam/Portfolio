@@ -1,0 +1,502 @@
+/* Start Hero section */
+#home .container {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home h1 {
+  margin-top: 50px;
+  font-size: 2em;
+  color: var(--section-title-color);
+}
+#home h1 span {
+  color: var(--main-color);
+}
+#home h1 span:first-child {
+  font-family: "Patrick Hand", cursive;
+  background-image: var(--gradient-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Typewriter {
+  display: inline-block;
+}
+#home p {
+  max-width: 800px;
+  margin: 25px 0 20px;
+  line-height: 1.5;
+}
+#home .skills {
+  margin-bottom: 25px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#home .image {
+  width: fit-content;
+  position: relative;
+  margin: auto;
+}
+#home .image::before,
+#home .image::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+}
+#home .image::before {
+  border-top: 4px solid var(--main-color);
+  border-right: 4px solid var(--main-color);
+  top: -20px;
+  right: -20px;
+}
+#home .image::after {
+  border-bottom: 4px solid var(--main-color);
+  border-left: 4px solid var(--main-color);
+  bottom: -30px;
+  left: -20px;
+}
+#home .image img {
+  width: 290px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+}
+#home .image div {
+  background-color: var(--main-color);
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 300px 150px var(--main-color);
+  z-index: -1;
+}
+@media (max-width: 991.98px) {
+  #home .image img {
+    width: 280px;
+  }
+}
+@media (max-width: 767.98px) {
+  #home .container {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+  #home .links {
+    padding-right: 0;
+  }
+  #home h1 {
+    margin: 50px auto;
+    font-size: 1.5em;
+  }
+  #home p {
+    font-size: 0.8em;
+  }
+  #home .skills i {
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+  #home .image img {
+    width: 200px;
+  }
+}
+@media (max-width: 564px) {
+  #home .image {
+    margin-top: 50px;
+  }
+  #home .image::before {
+    top: -10px;
+    right: -10px;
+  }
+  #home .image::after {
+    bottom: -10px;
+    left: -10px;
+  }
+  #home .image img {
+    width: 150px;
+  }
+}
+@keyframes blink {
+  0% {
+    background-color: var(--section-title-color);
+  }
+  49% {
+    background-color: var(--section-title-color);
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: var(--section-title-color);
+  }
+}
+/* End Hero section */
+/* Start About section */
+#about {
+  padding: var(--setion-padding) 0 0;
+}
+#about > h3 {
+  color: var(--section-title-color);
+  font-size: 1.5rem;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 30px;
+}
+#about h3 span {
+  color: var(--main-color);
+  transition: 1s;
+}
+#about h2 + p {
+  text-align: center;
+  width: 100%;
+  line-height: 1.8;
+  font-weight: 300;
+}
+#about .about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 50px 0 30px;
+  font-size: 0.8em;
+}
+#about .about-content > div p {
+  margin-bottom: 40px;
+  position: relative;
+}
+#about .about-content > div p::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  background-color: var(--section-color);
+  bottom: -20px;
+  left: 0;
+}
+#about .about-content > div p b {
+  color: var(--section-title-color);
+  margin-right: 5px;
+}
+#about .skills-progress h5 {
+  color: var(--section-title-color);
+  margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+}
+#about .skills-progress div {
+  background-color: var(--section-color);
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: -1;
+}
+#about .skills-progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  background-size: 400% 400%;
+  background-image: var(--gradient-color);
+  animation: gradient 2s infinite;
+  display: block;
+  border-radius: 5px;
+  height: 100%;
+  transition-duration: 3s;
+  z-index: -1;
+}
+#about .btn {
+  width: fit-content;
+  display: block;
+  margin: auto;
+}
+#about .education {
+  margin-top: 75px;
+}
+#about .education .container h3 {
+  margin: auto;
+  color: var(--section-title-color);
+  font-size: 1.5rem;
+}
+#about .education .timeline {
+  padding: 50px 20px;
+  background-color: var(--section-color);
+  border-radius: 15px;
+  position: relative;
+  margin-bottom: 50px;
+}
+#about .education .timeline::before {
+  content: "";
+  background-color: var(--second-color);
+  width: 0.01px;
+  height: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  box-shadow: 0 0 300px 150px var(--second-color);
+  z-index: -1;
+}
+#about .education .timeline div {
+  margin-left: 50px;
+  padding-bottom: 40px;
+  position: relative;
+}
+#about .education .timeline div::before,
+#about .education .timeline div::after {
+  content: "";
+  background-color: var(--main-color);
+  position: absolute;
+  top: 0;
+}
+#about .education .timeline div::before {
+  width: 20px;
+  height: 20px;
+  left: -45px;
+  border-radius: 50%;
+}
+#about .education .timeline div::after {
+  width: 1px;
+  height: 100%;
+  left: -35px;
+}
+#about .education .timeline div h4 {
+  color: var(--section-title-color);
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+#about .education .timeline h5 {
+  font-size: 1rem;
+  margin-top: 20px;
+  color: var(--section-title-color);
+}
+#about .education .timeline span {
+  opacity: 0.6;
+}
+#about .education .timeline div ul {
+  list-style: circle;
+  margin-left: 15px;
+}
+#about .education .timeline div p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+@media (max-width: 991.98px) {
+  #about .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    font-size: 0.6em;
+  }
+  #about .about-content > div p::after {
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 564px) {
+  #about .image img {
+    width: 100%;
+  }
+  #about .education .timeline div {
+    margin-left: 15px;
+  }
+  #about .education .timeline::before {
+    height: 100%;
+    top: 5%;
+    left: 50%;
+  }
+  #about .education .timeline div::before {
+    width: 15px;
+    height: 15px;
+    left: -25px;
+  }
+  #about .education .timeline div::after {
+    left: -17.5px;
+  }
+  #about .education .timeline div h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  #about .education .timeline div p {
+    font-size: 0.8rem;
+  }
+}
+/* End About section */
+.socials {
+  background: linear-gradient(
+    90deg,
+    var(--main-color) 0%,
+    rgba(238, 130, 238, 1) 50%,
+    var(--second-color) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+  padding: 50px 0;
+  margin: var(--setion-padding) 0;
+}
+.socials .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.socials h3 {
+  color: var(--background-color);
+  margin: 0;
+  font-size: 1.5rem;
+}
+.socials i {
+  color: var(--background-color);
+  font-size: 1.5rem;
+  margin-left: 10px;
+  transition-duration: 0.3s;
+}
+.socials i:hover {
+  color: var(--section-title-color);
+}
+@media (max-width: 564px) {
+  .socials .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .socials h3 {
+    font-size: 1rem;
+  }
+  .socials i {
+    font-size: 1.2rem;
+  }
+}
+
+.area {
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(252, 87, 92, 0.5);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+  background: rgba(0, 190, 200, 0.5);
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+  background: rgba(0, 190, 200, 0.5);
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+  background: rgba(0, 190, 200, 0.5);
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+  background: rgba(0, 190, 200, 0.5);
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
