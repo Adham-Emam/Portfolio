@@ -8,7 +8,7 @@ function Projects() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://adhamemam.pythonanywhere.com/api/projects/projects/")
+    fetch("http://127.0.0.1:8000/api/projects/projects/")
       .then((response) => {
         if (!response.ok) {
           const error = new Error("Network response was not ok");

@@ -9,7 +9,7 @@ const Blog = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://adhamemam.pythonanywhere.com/blogs/blogposts/")
+    fetch("http://127.0.0.1:8000/api/blogs/blogposts/")
       .then((response) => {
         if (!response.ok) {
           const error = new Error("Network response was not ok");

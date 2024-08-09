@@ -17,7 +17,7 @@ const BlogPost = () => {
     const fetchPostData = async () => {
       try {
         const response = await fetch(
-          `https://adhamemam.pythonanywhere.com/api/blogs/blogposts/${id}`
+          `http://127.0.0.1:8000/api/blogs/blogposts/${id}`
         );
         if (!response.ok) {
           throw new Error("Network response was not ok, Unalbe to Fetch blogs");
