@@ -8,7 +8,7 @@ function Projects() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/projects/projects/")
+    fetch("https://adhamemam.pythonanywhere.com/api/projects/projects/")
       .then((response) => {
         if (!response.ok) {
           const error = new Error("Network response was not ok");
@@ -44,17 +44,14 @@ function Projects() {
     );
   }
 
-  
-    // Function to format date
-    const formatDate = (dateString) => {
-      const options = { year: 'numeric', month: 'short', day: 'numeric'};
-      return new Date(dateString).toLocaleDateString(undefined, options);
-    };
-
+  // Function to format date
+  const formatDate = (dateString) => {
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  };
 
   // Reverse the data array before mapping it
   const reversedData = [...data].reverse();
-
 
   return (
     <>

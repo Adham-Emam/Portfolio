@@ -6,7 +6,7 @@ const MoreBlogs = () => {
 
   useEffect(() => {
     // Fetch all articles
-    fetch("http://127.0.0.1:8000/blogs/blogposts/")
+    fetch("https://adhamemam.pythonanywhere.com/api/blogs/blogposts/")
       .then((response) => response.json())
       .then((data) => {
         // Shuffle array and select 4 random articles
