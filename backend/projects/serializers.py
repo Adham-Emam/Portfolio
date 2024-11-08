@@ -1,8 +1,8 @@
-from rest_framework import serializers
 from .models import Project
+from rest_framework import serializers
 
 
-class ProjectSerializer(serializers.ModelSerializer):
+class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Project
-        fields = '__all__'
+        fields = "__all__"

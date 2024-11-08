@@ -7,3 +7,9 @@ class Project(models.Model):
     description = models.TextField()
     project_url = models.URLField()
     date_posted = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-date_posted"]
+
+    def __str__(self):
+        return self.title
