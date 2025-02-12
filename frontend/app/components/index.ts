@@ -1,0 +1,14 @@
+export { default as Navbar } from "./Navbar/Navbar";
+export { default as Hero } from "./Hero/Hero";
+export { default as Skills } from "./Skills/Skills";
+export { default as About } from "./About/About";
+export { default as CTA } from "./CTA/CTA";
+export { default as Timeline } from "./Timeline/Timeline";
+export { default as Footer } from "./Footer/Footer";
+export { default as Projects } from "./Projects/Projects";
+export { default as BlogPosts } from "./BlogPosts/BlogPosts";
+export { default as PageCount } from "./PageCount/PageCount";
+export { default as BlogDetails } from "./BlogDetails/BlogDetails";
+export { default as RandomPosts } from "./RandomPosts/RandomPosts";
+export { default as LoadingComp } from "./LoadingComp/LoadingComp";
+export { default as CalculateAge } from "./CalculateAge";

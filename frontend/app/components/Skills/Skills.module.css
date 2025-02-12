@@ -1,0 +1,12 @@
+.skills {
+  margin: 10px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+@media (max-width: 991px) {
+  .skills {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,30 @@
+.pageCount {
+  width: auto;
+  font-size: 1.3rem;
+  margin-left: auto;
+  margin-bottom: 30px;
+}
+.pageCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pageButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--section-color);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition-duration: 0.1s;
+}
+.pageButton:disabled,
+.pageButton:hover {
+  color: var(--foreground);
+  border: 2px solid var(--second-color);
+}
