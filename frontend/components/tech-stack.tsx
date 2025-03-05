@@ -1,95 +1,80 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
 
-const technologies = [
-  {
-    name: "HTML",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "Bootstrap",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "React.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "Next.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-    category: "frontend",
-  },
-  {
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    category: "backend",
-  },
-  {
-    name: "Django",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-    category: "backend",
-  },
-  {
-    name: "Flask",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
-    category: "backend",
-  },
-  {
-    name: "FastAPI",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-    category: "backend",
-  },
-  {
-    name: "SQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    category: "backend",
-  },
-  {
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    category: "devops",
-  },
-  {
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    category: "devops",
-  },
-  {
-    name: "GitHub",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-    category: "devops",
-  },
-];
+type Technologies = {
+  name: string;
+  icon: string;
+  category: string;
+};
+
+function LoadingSkeleton() {
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-wrap justify-center gap-2">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <Skeleton key={i} className="h-6 w-16 rounded-full" />
+        ))}
+      </div>
+      <div className="grid grid-cols-2 px-2 md:px-4 lg:px-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div
+            key={i}
+            className="flex flex-col items-center p-4 rounded-lg border bg-card"
+          >
+            <Skeleton className="h-12 w-12 mb-3 rounded-md" />
+            <Skeleton className="h-4 w-20 rounded" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function TechStack() {
+  const [mounted, setMounted] = useState(false);
+  const [technologies, setTechnologies] = useState<Technologies[]>([]);
   const [filter, setFilter] = useState("all");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setMounted(true);
+    const fetchTechnologies = async () => {
+      try {
+        const res = await fetch("http://127.0.0.1:8000/tech_stack/");
+        if (!res.ok) {
+          throw new Error(`Failed to fetch: ${res.status} ${res.statusText}`);
+        }
+        const data = await res.json();
+        setTechnologies(data);
+      } catch (error) {
+        console.error("Error fetching technologies:", error);
+        setTechnologies([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchTechnologies();
+  }, []);
+
+  // Prevent hydration issues by not rendering until mounted
+  if (!mounted) {
+    return <LoadingSkeleton />;
+  }
 
   const filteredTech =
     filter === "all"
       ? technologies
       : technologies.filter((tech) => tech.category === filter);
+
+  if (isLoading) {
+    return <LoadingSkeleton />;
+  }
 
   return (
     <div className="space-y-6">
@@ -110,7 +95,7 @@ export function TechStack() {
         </Badge>
         <Badge
           variant={filter === "backend" ? "default" : "outline"}
-          className="cursor-pointer py-1.5 px-4"
+          className="cursor-pointer"
           onClick={() => setFilter("backend")}
         >
           Backend
