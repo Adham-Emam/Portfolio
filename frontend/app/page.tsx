@@ -73,11 +73,13 @@ export default function Home() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-muted-foreground">contact@example.com</p>
+                    <p className="text-muted-foreground">
+                      adhamh372002@gmail.com
+                    </p>
                   </div>
                   <div>
                     <h4 className="font-medium">Location</h4>
-                    <p className="text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-muted-foreground">Cairo, Egypt</p>
                   </div>
                 </div>
               </div>
