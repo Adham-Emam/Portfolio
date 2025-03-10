@@ -53,6 +53,7 @@ function ProjectCardSkeleton() {
 export function FeaturedProjects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -72,6 +73,7 @@ export function FeaturedProjects() {
       } catch (error) {
         console.error("Error fetching projects:", error);
         setProjects([]);
+        setError("Failed to load projects. Please try again later.");
       } finally {
         setIsLoading(false);
       }
@@ -98,72 +100,76 @@ export function FeaturedProjects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {isLoading
-          ? Array.from({ length: 3 }).map((_, i) => (
-              <ProjectCardSkeleton key={i} />
-            ))
-          : projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden relative pb-16">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={project.image}
-                    alt={`Screenshot or preview of ${project.title}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
-                    priority={true}
-                  />
+        {isLoading ? (
+          Array.from({ length: 3 }).map((_, i) => (
+            <ProjectCardSkeleton key={i} />
+          ))
+        ) : error ? (
+          <section className="py-16 col-span-full">
+            <div className="container text-center">
+              <p className="text-destructive">{error}</p>
+            </div>
+          </section>
+        ) : (
+          projects.map((project) => (
+            <Card key={project.id} className="overflow-hidden relative pb-16">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={project.image}
+                  alt={`Screenshot or preview of ${project.title}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                  priority={true}
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription className="line-clamp-2">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.split(",").map((tag: string) => (
+                    <Badge key={tag} variant="secondary" className="capitalize">
+                      {tag}
+                    </Badge>
+                  ))}
                 </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription className="line-clamp-2">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.split(",").map((tag: string) => (
-                      <Badge
-                        key={tag}
-                        variant="secondary"
-                        className="capitalize"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="flex justify-between w-full absolute bottom-0">
-                  <Button variant="outline" size="sm" asChild>
+              </CardContent>
+              <CardFooter className="flex justify-between w-full absolute bottom-0">
+                <Button variant="outline" size="sm" asChild>
+                  <Link
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View source code for ${project.title} on GitHub`}
+                  >
+                    <Github className="mr-2 h-4 w-4" aria-hidden="true" />
+                    Code
+                  </Link>
+                </Button>
+                {project.liveUrl && (
+                  <Button size="sm" asChild>
                     <Link
-                      href={project.githubUrl}
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`View source code for ${project.title} on GitHub`}
+                      aria-label={`Visit live demo of ${project.title}`}
                     >
-                      <Github className="mr-2 h-4 w-4" aria-hidden="true" />
-                      Code
+                      <ExternalLink
+                        className="mr-2 h-4 w-4"
+                        aria-hidden="true"
+                      />
+                      Live Demo
                     </Link>
                   </Button>
-                  {project.liveUrl && (
-                    <Button size="sm" asChild>
-                      <Link
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Visit live demo of ${project.title}`}
-                      >
-                        <ExternalLink
-                          className="mr-2 h-4 w-4"
-                          aria-hidden="true"
-                        />
-                        Live Demo
-                      </Link>
-                    </Button>
-                  )}
-                </CardFooter>
-              </Card>
-            ))}
+                )}
+              </CardFooter>
+            </Card>
+          ))
+        )}
       </div>
     </section>
   );
