@@ -205,18 +205,22 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              {/* <div className="border rounded-lg p-6">
+              <div className="border rounded-lg p-6">
                 <h3 className="text-xl font-semibold mb-2">
-                  React.js Advanced Concepts
+                  Next.js Advanced Concepts
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  Frontend Masters, 2019
+                  Frontend Masters, 2025
                 </p>
                 <p>
-                  Completed advanced training in React.js, Redux, and modern
-                  front-end architecture.
+                  In this course, I mastered Next.js, a React-based full-stack
+                  framework, learning server-side rendering, static site
+                  generation, data fetching, and API creation. I also explored
+                  advanced features like the app router, server/client
+                  components, and server actions, enabling me to build scalable,
+                  high-performance web applications.
                 </p>
-              </div> */}
+              </div>
             </div>
           </div>
         </section>

@@ -57,7 +57,7 @@ export function HeroSection() {
             </Link>
           </Button>
           <a
-            className="flex items-center text-sm text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
+            className="flex items-center justify-center text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
             href="/AdhamEmam.pdf"
             download="AdhamEmam.pdf"
           >
