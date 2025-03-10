@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <>
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
@@ -177,6 +177,6 @@ export default function Home() {
         </section>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

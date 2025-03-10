@@ -8,6 +8,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
+import Image from "next/image";
 
 const routes = [
   {
@@ -35,9 +36,18 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-10 flex h-16 items-center justify-between">
-        <Link href="/" className="font-bold text-xl">
-          Adham Emam
-        </Link>
+        <div className="flex items-center">
+          <Image
+            src={"/logo.png"}
+            alt="logo"
+            width={35}
+            height={35}
+            className="me-2"
+          />
+          <Link href="/" className="font-bold text-xl">
+            Adham Emam
+          </Link>
+        </div>
 
         <nav className="hidden md:flex gap-6">
           {routes.map((route) => (

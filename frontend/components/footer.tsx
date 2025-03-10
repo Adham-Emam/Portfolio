@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -7,7 +8,16 @@ export function Footer() {
       <div className="container py-8 md:py-12 w-fit mx-auto px-2 md:px-4 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Adham Emam</h3>
+            <div className="flex justify-center items-center md:justify-start mb-4">
+              <Image
+                src={"/logo.png"}
+                alt="logo"
+                width={50}
+                height={50}
+                className="me-2"
+              />
+              <h3 className="text-lg font-semibold">Adham Emam</h3>
+            </div>
             <p className="text-muted-foreground">
               Full-stack developer specializing in modern web technologies and
               frameworks.
