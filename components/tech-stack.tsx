@@ -19,28 +19,35 @@ export function TechStack() {
       <div className="flex flex-wrap justify-center gap-2">
         <Badge
           variant={filter === "all" ? "default" : "outline"}
-          className="cursor-pointer"
+          className="cursor-pointer px-4 py-2"
           onClick={() => setFilter("all")}
         >
           All
         </Badge>
         <Badge
           variant={filter === "frontend" ? "default" : "outline"}
-          className="cursor-pointer"
+          className="cursor-pointer px-4 py-2"
           onClick={() => setFilter("frontend")}
         >
           Frontend
         </Badge>
         <Badge
           variant={filter === "backend" ? "default" : "outline"}
-          className="cursor-pointer"
+          className="cursor-pointer px-4 py-2"
           onClick={() => setFilter("backend")}
         >
           Backend
         </Badge>
         <Badge
+          variant={filter === "database" ? "default" : "outline"}
+          className="cursor-pointer px-4 py-2"
+          onClick={() => setFilter("database")}
+        >
+          Database
+        </Badge>
+        <Badge
           variant={filter === "devops" ? "default" : "outline"}
-          className="cursor-pointer"
+          className="cursor-pointer px-4 py-2"
           onClick={() => setFilter("devops")}
         >
           DevOps
@@ -48,9 +55,9 @@ export function TechStack() {
       </div>
 
       <div className="grid grid-cols-2 px-2 md:px-4 lg:px-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {filteredTech.map((tech) => (
+        {filteredTech.map((tech, index) => (
           <div
-            key={tech.id}
+            key={index}
             className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-all"
           >
             <div className="relative h-12 w-12 mb-3">
