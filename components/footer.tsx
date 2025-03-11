@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container py-8 md:py-12 w-fit mx-auto px-2 md:px-4 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex justify-center items-center md:justify-start mb-4">
+            <div className="flex items-center md:justify-start mb-4">
               <Image
                 src={"/logo.png"}
                 alt="logo"

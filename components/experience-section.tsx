@@ -3,13 +3,13 @@ import { experience } from "@/data/experience";
 
 export const ExperienceSection = () => {
   return (
-    <div className="space-y-12">
+    <>
       {experience
         .slice()
         .reverse()
         .map((experience) => (
           <div key={experience.id}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 my-8">
               <div className="md:col-span-1">
                 <h3 className="font-semibold">
                   {experience.start_date}
@@ -33,6 +33,6 @@ export const ExperienceSection = () => {
             {experience.id !== 1 && <Separator />}
           </div>
         ))}
-    </div>
+    </>
   );
 };

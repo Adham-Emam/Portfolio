@@ -60,7 +60,11 @@ export function TechStack() {
                 fill
                 className={cn(
                   "object-contain",
-                  tech.name === "GitHub" && "dark:invert"
+                  (tech.name === "Next.js" ||
+                    tech.name === "Express.js" ||
+                    tech.name === "GitHub" ||
+                    tech.name === "Flask") &&
+                    "dark:invert"
                 )}
               />
             </div>

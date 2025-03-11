@@ -6,7 +6,6 @@ import { ContactForm } from "@/components/contact-form";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BackgroundAnimation } from "@/components/ui/bg-animation";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,6 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-background/90 backdrop-blur-lg">
-          <BackgroundAnimation />
           <HeroSection />
         </section>
 
@@ -43,7 +41,7 @@ export default function Home() {
         {/* About Section */}
         <section className="py-16 bg-muted/50">
           <div className="container">
-            <div className="flex justify-between items-center space-y-8 mb-8">
+            <div className="flex justify-between items-center">
               <h2 className="text-3xl font-bold tracking-tight">
                 My Experience
               </h2>
