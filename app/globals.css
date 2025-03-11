@@ -88,22 +88,32 @@
   padding-right: 2rem;
 }
 
-.circles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+@keyframes animate-left {
+  0% {
+    left: -20%;
+    border-radius: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    left: 120%;
+    border-radius: 50%;
+    transform: rotate(360deg);
+  }
 }
-.circles li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 20px;
-  height: 20px;
-  background: #ddd;
-  opacity: 0.2;
+
+@keyframes animate-right {
+  0% {
+    right: -20%;
+    border-radius: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    right: 120%;
+    border-radius: 50%;
+    transform: rotate(360deg);
+  }
 }
+
 .circles li:nth-child(1),
 .circles li:nth-child(3),
 .circles li:nth-child(5),
@@ -112,6 +122,7 @@
   right: -20%;
   animation: animate-right 25s linear infinite;
 }
+
 .circles li:nth-child(2),
 .circles li:nth-child(4),
 .circles li:nth-child(6),
@@ -120,13 +131,7 @@
   left: -20%;
   animation: animate-left 25s linear infinite;
 }
-.circles li:nth-child(6),
-.circles li:nth-child(7),
-.circles li:nth-child(8),
-.circles li:nth-child(9),
-.circles li:nth-child(10) {
-  background: #222;
-}
+
 .circles li:nth-child(1) {
   top: 25%;
   width: 80px;
@@ -200,42 +205,4 @@
   height: 150px;
   animation-delay: 0s;
   animation-duration: 11s;
-}
-
-@keyframes animate-left {
-  0% {
-    left: -20%;
-    border-radius: 0;
-    transform: rotate(0deg);
-  }
-
-  100% {
-    left: 120%;
-    border-radius: 50%;
-    transform: rotate(360deg);
-  }
-}
-@keyframes animate-right {
-  0% {
-    right: -20%;
-    border-radius: 0;
-    transform: rotate(0deg);
-  }
-
-  100% {
-    right: 120%;
-    border-radius: 50%;
-    transform: rotate(360deg);
-  }
-}
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

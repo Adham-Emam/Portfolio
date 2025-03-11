@@ -25,7 +25,7 @@ export default function ContactPage() {
         <section className="py-16">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <Card>
+              <Card className="h-fit py-4">
                 <CardHeader>
                   <CardTitle className="text-2xl">Send Me a Message</CardTitle>
                 </CardHeader>

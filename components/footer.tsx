@@ -1,8 +1,12 @@
+"use client";
 import Link from "next/link";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export function Footer() {
+  const { resolvedTheme } = useTheme();
+
   return (
     <footer className="border-t">
       <div className="container py-8 md:py-12 w-fit mx-auto px-2 md:px-4 lg:px-16">
@@ -14,7 +18,9 @@ export function Footer() {
                 alt="logo"
                 width={50}
                 height={50}
-                className="me-2"
+                className={`me-2 ${
+                  resolvedTheme === "light" && "brightness-0"
+                }`}
               />
               <h3 className="text-lg font-semibold">Adham Emam</h3>
             </div>
@@ -48,14 +54,6 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Projects
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Blog
                 </Link>
               </li>
               <li>

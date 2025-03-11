@@ -1,0 +1,92 @@
+export const technologies = [
+  {
+    id: 1,
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 2,
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 4,
+    name: "Bootstrap",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 5,
+    name: "Tailwind CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 6,
+    name: "React.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 7,
+    name: "Next.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    category: "frontend",
+  },
+  {
+    id: 8,
+    name: "Python",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    category: "backend",
+  },
+  {
+    id: 9,
+    name: "Django",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+    category: "backend",
+  },
+  {
+    id: 10,
+    name: "Flask",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+    category: "backend",
+  },
+  {
+    id: 11,
+    name: "FastAPI",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    category: "backend",
+  },
+  {
+    id: 12,
+    name: "SQL",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    category: "backend",
+  },
+  {
+    id: 13,
+    name: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    category: "devops",
+  },
+  {
+    id: 14,
+    name: "Git",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    category: "devops",
+  },
+  {
+    id: 15,
+    name: "GitHub",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    category: "devops",
+  },
+];

@@ -9,6 +9,7 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const routes = [
   {
@@ -32,6 +33,7 @@ const routes = [
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -42,7 +44,7 @@ export function Navbar() {
             alt="logo"
             width={35}
             height={35}
-            className="me-2"
+            className={`me-2 ${resolvedTheme === "light" && "brightness-0"}`}
           />
           <Link href="/" className="font-bold text-xl">
             Adham Emam
