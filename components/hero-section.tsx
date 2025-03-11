@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import Link from "next/link";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
@@ -58,11 +58,11 @@ export function HeroSection() {
           </Button>
           <a
             className="flex items-center justify-center text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
-            href="/adham-emam.pdf"
-            download="adham-emam.pdf"
+            href="https://drive.google.com/file/d/1vgFghjNWm_ohGVdMGUPl8aphQWHahs60/view?usp=sharing"
+            target="_blank"
           >
-            <Download className="mr-2 h-4 w-4" />
-            Download Resume
+            <FileText className="mr-2 h-4 w-4" />
+            My Resume
           </a>
         </div>
       </div>

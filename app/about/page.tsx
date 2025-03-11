@@ -4,7 +4,7 @@ import { TechStack } from "@/components/tech-stack";
 import { ExperienceSection } from "@/components/experience-section";
 import { EducationSection } from "@/components/education-section";
 import { Button } from "@/components/ui/button";
-import { Download, Mail } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -45,11 +45,11 @@ export default function AboutPage() {
                   </Button>
                   <a
                     className="flex justify-center items-center text-sm text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2 border transition-colors"
-                    href="/adham-emam.pdf"
-                    download="adham-emam.pdf"
+                    href="https://drive.google.com/file/d/1vgFghjNWm_ohGVdMGUPl8aphQWHahs60/view?usp=sharing"
+                    target="_blank"
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Resume
+                    <FileText className="mr-2 h-4 w-4" />
+                    My Resume
                   </a>
                 </div>
               </div>
