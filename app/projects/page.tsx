@@ -84,8 +84,14 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function ProjectsPage() {
-  const featuredProjects = projects.filter((project) => project.featured);
-  const otherProjects = projects.filter((project) => !project.featured);
+  const featuredProjects = projects
+    .slice()
+    .reverse()
+    .filter((project) => project.featured);
+  const otherProjects = projects
+    .slice()
+    .reverse()
+    .filter((project) => !project.featured);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -105,7 +111,7 @@ export default function ProjectsPage() {
 
         <section className="py-16">
           <div className="container">
-            <h2 className="text-3xl font-bold tracking-tight mb-8">
+            <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
               Featured Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -118,7 +124,7 @@ export default function ProjectsPage() {
 
         <section className="py-16 bg-muted/50">
           <div className="container">
-            <h2 className="text-3xl font-bold tracking-tight mb-8">
+            <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
               All Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
