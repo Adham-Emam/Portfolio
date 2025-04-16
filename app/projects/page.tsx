@@ -1,9 +1,9 @@
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import Image from "next/image";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -11,21 +11,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Github, ExternalLink } from "lucide-react";
-import { projects } from "@/data/projects";
+} from '@/components/ui/card'
+import { Github, ExternalLink } from 'lucide-react'
+import { projects } from '@/data/projects'
+import { FadeIn } from '@/components/animations/FadeIn'
 
 type Project = {
-  id: number;
-  title: string;
-  image: string;
-  description: string;
-  githubUrl: string;
-  liveUrl: string;
-  date: string;
-  tags: string[];
-  featured: boolean;
-};
+  id: number
+  title: string
+  image: string
+  description: string
+  githubUrl: string
+  liveUrl: string
+  date: string
+  tags: string[]
+  featured: boolean
+}
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -80,18 +81,18 @@ function ProjectCard({ project }: { project: Project }) {
         )}
       </CardFooter>
     </Card>
-  );
+  )
 }
 
 export default function ProjectsPage() {
   const featuredProjects = projects
     .slice()
     .reverse()
-    .filter((project) => project.featured);
+    .filter((project) => project.featured)
   const otherProjects = projects
     .slice()
     .reverse()
-    .filter((project) => !project.featured);
+    .filter((project) => !project.featured)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -115,8 +116,10 @@ export default function ProjectsPage() {
               Featured Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+              {featuredProjects.map((project, index) => (
+                <FadeIn key={project.id} direction="right" delay={index * 0.1}>
+                  <ProjectCard project={project} />
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -128,8 +131,14 @@ export default function ProjectsPage() {
               All Projects
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+              {otherProjects.map((project, index) => (
+                <FadeIn
+                  key={project.id}
+                  direction="right"
+                  delay={(index / 3) * 0.1}
+                >
+                  <ProjectCard project={project} />
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -137,5 +146,5 @@ export default function ProjectsPage() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }

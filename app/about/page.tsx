@@ -1,12 +1,12 @@
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { TechStack } from "@/components/tech-stack";
-import { ExperienceSection } from "@/components/experience-section";
-import { EducationSection } from "@/components/education-section";
-import { Button } from "@/components/ui/button";
-import { FileText, Mail } from "lucide-react";
-import Link from "next/link";
-import Image from "next/image";
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import { TechStack } from '@/components/tech-stack'
+import { ExperienceSection } from '@/components/experience-section'
+import { EducationSection } from '@/components/education-section'
+import { Button } from '@/components/ui/button'
+import { FileText, Mail } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function AboutPage() {
   return (
@@ -37,7 +37,7 @@ export default function AboutPage() {
                   my knowledge through blog posts and tutorials.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button asChild>
+                  <Button asChild className="glow-effect">
                     <Link href="/contact" className="transition-colors">
                       <Mail className="mr-2 h-4 w-4" />
                       Contact Me
@@ -94,5 +94,5 @@ export default function AboutPage() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }

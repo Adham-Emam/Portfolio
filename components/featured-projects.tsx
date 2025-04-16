@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -8,13 +8,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Github, ExternalLink } from "lucide-react";
-import { projects } from "@/data/projects";
+} from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { ArrowRight, Github, ExternalLink } from 'lucide-react'
+import { projects } from '@/data/projects'
+import { FadeIn } from '@/components/animations/FadeIn'
 
 export function FeaturedProjects() {
-  const featured = projects.filter((project) => project.featured);
+  const featured = projects.filter((project) => project.featured)
 
   return (
     <section aria-label="Featured Projects" className="space-y-8">
@@ -32,8 +33,13 @@ export function FeaturedProjects() {
         {featured
           .slice()
           .reverse()
-          .map((project) => (
-            <Card key={project.id} className="overflow-hidden relative pb-16">
+          .map((project, index) => (
+            <FadeIn
+              key={project.id}
+              className="overflow-hidden relative pb-16"
+              direction="left"
+              delay={index * 0.1}
+            >
               <div className="relative h-48 w-full">
                 <Image
                   src={project.image}
@@ -88,9 +94,9 @@ export function FeaturedProjects() {
                   </Button>
                 )}
               </CardFooter>
-            </Card>
+            </FadeIn>
           ))}
       </div>
     </section>
-  );
+  )
 }

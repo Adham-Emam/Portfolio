@@ -1,41 +1,46 @@
-"use client";
+'use client'
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText } from "lucide-react";
-import Link from "next/link";
-import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { Button } from '@/components/ui/button'
+import { FadeIn } from './animations/FadeIn'
+import { ArrowRight, FileText } from 'lucide-react'
+import Link from 'next/link'
+import { TypewriterEffect } from '@/components/ui/typewriter-effect'
 
 export function HeroSection() {
   const words = [
     {
-      text: "Full-Stack",
+      text: 'Full-Stack',
     },
     {
-      text: "Developer",
+      text: 'Developer',
     },
     {
-      text: "with",
+      text: 'with',
     },
     {
-      text: "passion",
+      text: 'passion',
     },
     {
-      text: "for",
+      text: 'for',
     },
     {
-      text: "building",
+      text: 'building',
     },
     {
-      text: "great",
+      text: 'great',
     },
     {
-      text: "experiences.",
+      text: 'experiences.',
     },
-  ];
+  ]
 
   return (
     <div className="relative overflow-hidden">
-      <div className="container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center">
+      <FadeIn
+        className="container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center"
+        direction="down"
+        once={true}
+      >
         <div className="space-y-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
             <span className="block">Hello, I&apos;m a</span>
@@ -50,7 +55,7 @@ export function HeroSection() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg">
+          <Button asChild size="lg" className="glow-effect">
             <Link href="/projects">
               View My Work
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -65,7 +70,7 @@ export function HeroSection() {
             My Resume
           </a>
         </div>
-      </div>
+      </FadeIn>
     </div>
-  );
+  )
 }

@@ -1,5 +1,6 @@
-import { Separator } from "@/components/ui/separator";
-import { experience } from "@/data/experience";
+import { Separator } from '@/components/ui/separator'
+import { experience } from '@/data/experience'
+import { FadeIn } from '@/components/animations/FadeIn'
 
 export const ExperienceSection = () => {
   return (
@@ -7,15 +8,15 @@ export const ExperienceSection = () => {
       {experience
         .slice()
         .reverse()
-        .map((experience) => (
-          <div key={experience.id}>
+        .map((experience, index) => (
+          <FadeIn key={experience.id} direction="right" delay={index * 0.2}>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 my-8">
               <div className="md:col-span-1">
                 <h3 className="font-semibold">
                   {experience.start_date}
                   {experience.end_date
                     ? ` - ${experience.end_date}`
-                    : " - Present"}
+                    : ' - Present'}
                 </h3>
                 <p className="text-muted-foreground">{experience.title}</p>
               </div>
@@ -31,8 +32,8 @@ export const ExperienceSection = () => {
               </div>
             </div>
             {experience.id !== 1 && <Separator />}
-          </div>
+          </FadeIn>
         ))}
     </>
-  );
-};
+  )
+}
