@@ -53,7 +53,7 @@ export function TechStack() {
           <Scale
             key={index}
             className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-all"
-            delay={index * 0.05}
+            delay={index * 0.02}
           >
             <div className="relative h-12 w-12 mb-3">
               <Image

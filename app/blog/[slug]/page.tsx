@@ -1,7 +1,24 @@
 import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
-import { Calendar } from 'lucide-react'
+import { Calendar, ReceiptRussianRuble } from 'lucide-react'
 import { posts } from '@/data/posts'
+import { HighlightedContent } from '@/components/highlighted-content'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}) {
+  const slug = (await params).slug
+
+  // Find the post based on slug
+  const post = posts.find((post) => post.slug === slug)
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+  }
+}
 
 export default async function BlogPostPage({
   params,
@@ -64,10 +81,7 @@ export default async function BlogPostPage({
           <div className="container max-w-4xl py-12 mx-auto w-fit px-8 lg:px-0">
             {/* Main Content */}
             <div className="flex-1">
-              <div
-                className="prose prose-lg dark:prose-invert max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.body }}
-              />
+              <HighlightedContent html={post.body} />
             </div>
           </div>
         </article>

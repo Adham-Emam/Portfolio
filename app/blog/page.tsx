@@ -37,7 +37,7 @@ export default function BlogPage() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, index) => (
-                <FadeIn key={index} direction="right" delay={index * 0.2}>
+                <FadeIn key={index} direction="right" delay={(index / 3) * 0.2}>
                   <Card className="relative overflow-hidden pb-12">
                     {post.image ? (
                       <Image
