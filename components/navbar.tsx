@@ -1,50 +1,55 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ModeToggle } from "@/components/mode-toggle";
-import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useState } from "react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+import { ModeToggle } from '@/components/mode-toggle'
+import { Menu } from 'lucide-react'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Separator } from '@/components/ui/separator'
+import { useState } from 'react'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 const routes = [
   {
-    href: "/",
-    label: "Home",
+    href: '/',
+    label: 'Home',
   },
   {
-    href: "/about",
-    label: "About",
+    href: '/about',
+    label: 'About',
   },
   {
-    href: "/projects",
-    label: "Projects",
+    href: '/projects',
+    label: 'Projects',
   },
   {
-    href: "/contact",
-    label: "Contact",
+    href: '/blog',
+    label: 'Blog',
   },
-];
+  {
+    href: '/contact',
+    label: 'Contact',
+  },
+]
 
 export function Navbar() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const { resolvedTheme } = useTheme();
+  const pathname = usePathname()
+  const [open, setOpen] = useState(false)
+  const { resolvedTheme } = useTheme()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-10 flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Image
-            src={"/logo.png"}
+            src={'/logo.png'}
             alt="logo"
             width={35}
             height={35}
-            className={`me-2 ${resolvedTheme === "light" && "brightness-0"}`}
+            className={`me-2 ${resolvedTheme === 'light' && 'brightness-0'}`}
           />
           <Link href="/" className="font-bold text-xl">
             Adham Emam
@@ -57,10 +62,10 @@ export function Navbar() {
               key={route.href}
               href={route.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-primary",
+                'text-sm font-medium transition-colors hover:text-primary',
                 pathname === route.href
-                  ? "text-foreground"
-                  : "text-muted-foreground"
+                  ? 'text-foreground'
+                  : 'text-muted-foreground'
               )}
             >
               {route.label}
@@ -80,19 +85,22 @@ export function Navbar() {
             <SheetContent side="right">
               <nav className="flex flex-col gap-4 mt-8">
                 {routes.map((route) => (
-                  <Link
-                    key={route.href}
-                    href={route.href}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "text-sm font-medium transition-colors hover:text-primary",
-                      pathname === route.href
-                        ? "text-foreground"
-                        : "text-muted-foreground"
-                    )}
-                  >
-                    {route.label}
-                  </Link>
+                  <>
+                    <Link
+                      key={route.href}
+                      href={route.href}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        'py-4 text-sm font-medium transition-colors hover:text-primary',
+                        pathname === route.href
+                          ? 'text-foreground'
+                          : 'text-muted-foreground'
+                      )}
+                    >
+                      {route.label}
+                    </Link>
+                    <Separator />
+                  </>
                 ))}
               </nav>
             </SheetContent>
@@ -100,5 +108,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  );
+  )
 }

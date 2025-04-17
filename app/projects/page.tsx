@@ -1,5 +1,3 @@
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -96,7 +94,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Navbar />
       <main className="flex-1">
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container text-center">
@@ -144,7 +141,6 @@ export default function ProjectsPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }

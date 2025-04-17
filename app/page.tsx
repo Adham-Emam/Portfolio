@@ -1,20 +1,17 @@
-import { HeroSection } from "@/components/hero-section";
-import { TechStack } from "@/components/tech-stack";
-import { FeaturedProjects } from "@/components/featured-projects";
-import { ExperienceSection } from "@/components/experience-section";
-import { ContactForm } from "@/components/contact-form";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { HeroSection } from '@/components/hero-section'
+import { TechStack } from '@/components/tech-stack'
+import { FeaturedProjects } from '@/components/featured-projects'
+import { ExperienceSection } from '@/components/experience-section'
+import { ContactForm } from '@/components/contact-form'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
+import { ArrowRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-background/90 backdrop-blur-lg">
@@ -101,7 +98,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
-  );
+  )
 }

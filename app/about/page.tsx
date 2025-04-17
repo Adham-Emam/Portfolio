@@ -1,5 +1,3 @@
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
 import { TechStack } from '@/components/tech-stack'
 import { ExperienceSection } from '@/components/experience-section'
 import { EducationSection } from '@/components/education-section'
@@ -11,7 +9,6 @@ import Image from 'next/image'
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Navbar />
       <main className="flex-1">
         <section className="py-16 md:py-24">
           <div className="container">
@@ -92,7 +89,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }

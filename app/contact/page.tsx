@@ -1,5 +1,3 @@
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
 import { ContactForm } from '@/components/contact-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react'
@@ -8,7 +6,6 @@ import Link from 'next/link'
 export default function ContactPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <Navbar />
       <main className="flex-1">
         <section className="py-16 md:py-24 bg-muted/50">
           <div className="container text-center">
@@ -132,7 +129,6 @@ export default function ContactPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }
