@@ -45,7 +45,9 @@ export function Navbar() {
       <div className="container mx-auto px-10 flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Image
-            src={'/logo.png'}
+            src={
+              'https://res-console.cloudinary.com/drf4f1euk/thumbnails/v1/image/upload/v1744977988/bG9nb195dGdwMWI=/drilldown'
+            }
             alt="logo"
             width={35}
             height={35}

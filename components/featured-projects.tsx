@@ -24,7 +24,7 @@ export function FeaturedProjects() {
         <Button asChild variant="ghost">
           <Link href="/projects" aria-label="View all projects">
             View All
-            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
       </div>
@@ -73,7 +73,7 @@ export function FeaturedProjects() {
                     rel="noopener noreferrer"
                     aria-label={`View source code for ${project.title} on GitHub`}
                   >
-                    <Github className="mr-2 h-4 w-4" aria-hidden="true" />
+                    <Github className="mr-2 h-4 w-4" />
                     Code
                   </Link>
                 </Button>
@@ -85,10 +85,7 @@ export function FeaturedProjects() {
                       rel="noopener noreferrer"
                       aria-label={`Visit live demo of ${project.title}`}
                     >
-                      <ExternalLink
-                        className="mr-2 h-4 w-4"
-                        aria-hidden="true"
-                      />
+                      <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
                     </Link>
                   </Button>

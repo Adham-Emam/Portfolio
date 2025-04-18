@@ -1,11 +1,11 @@
-"use client";
-import Link from "next/link";
-import { Github, Linkedin, Mail } from "lucide-react";
-import Image from "next/image";
-import { useTheme } from "next-themes";
+'use client'
+import Link from 'next/link'
+import { Github, Linkedin, Mail } from 'lucide-react'
+import Image from 'next/image'
+import { useTheme } from 'next-themes'
 
 export function Footer() {
-  const { resolvedTheme } = useTheme();
+  const { resolvedTheme } = useTheme()
 
   return (
     <footer className="border-t">
@@ -14,12 +14,14 @@ export function Footer() {
           <div>
             <div className="flex items-center md:justify-start mb-4">
               <Image
-                src={"/logo.png"}
+                src={
+                  'https://res-console.cloudinary.com/drf4f1euk/thumbnails/v1/image/upload/v1744977988/bG9nb195dGdwMWI=/drilldown'
+                }
                 alt="logo"
                 width={50}
                 height={50}
                 className={`me-2 ${
-                  resolvedTheme === "light" && "brightness-0"
+                  resolvedTheme === 'light' && 'brightness-0'
                 }`}
               />
               <h3 className="text-lg font-semibold">Adham Emam</h3>
@@ -102,5 +104,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

@@ -67,7 +67,7 @@ function ProjectCard({ project }: { project: Project }) {
             rel="noopener noreferrer"
             aria-label={`View source code for ${project.title} on GitHub`}
           >
-            <Github className="mr-2 h-4 w-4" aria-hidden="true" />
+            <Github className="mr-2 h-4 w-4" />
             Code
           </Link>
         </Button>
@@ -79,7 +79,7 @@ function ProjectCard({ project }: { project: Project }) {
               rel="noopener noreferrer"
               aria-label={`Visit live demo of ${project.title}`}
             >
-              <ExternalLink className="mr-2 h-4 w-4" aria-hidden="true" />
+              <ExternalLink className="mr-2 h-4 w-4" />
               Live Demo
             </Link>
           </Button>
@@ -101,53 +101,51 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <main className="flex-1">
-        <section className="py-16 md:py-24 bg-muted/50">
-          <div className="container text-center">
-            <h1 className="text-4xl font-bold tracking-tight mb-4">
-              My Projects
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              A collection of my work, including web applications, mobile apps,
-              and other software projects.
-            </p>
-          </div>
-        </section>
+      <section className="py-16 md:py-24 bg-muted/50">
+        <div className="container text-center">
+          <h1 className="text-4xl font-bold tracking-tight mb-4">
+            My Projects
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            A collection of my work, including web applications, mobile apps,
+            and other software projects.
+          </p>
+        </div>
+      </section>
 
-        <section className="py-16">
-          <div className="container">
-            <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
-              Featured Projects
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {featuredProjects.map((project, index) => (
-                <FadeIn key={project.id} direction="right" delay={index * 0.1}>
-                  <ProjectCard project={project} />
-                </FadeIn>
-              ))}
-            </div>
+      <section className="py-16">
+        <div className="container">
+          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
+            Featured Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProjects.map((project, index) => (
+              <FadeIn key={project.id} direction="right" delay={index * 0.1}>
+                <ProjectCard project={project} />
+              </FadeIn>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="py-16 bg-muted/50">
-          <div className="container">
-            <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
-              All Projects
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {otherProjects.map((project, index) => (
-                <FadeIn
-                  key={project.id}
-                  direction="right"
-                  delay={(index / 3) * 0.1}
-                >
-                  <ProjectCard project={project} />
-                </FadeIn>
-              ))}
-            </div>
+      <section className="py-16 bg-muted/50">
+        <div className="container">
+          <h2 className="text-3xl font-bold tracking-tight mb-8 text-center">
+            All Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {otherProjects.map((project, index) => (
+              <FadeIn
+                key={project.id}
+                direction="right"
+                delay={(index / 3) * 0.1}
+              >
+                <ProjectCard project={project} />
+              </FadeIn>
+            ))}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { FadeIn } from './animations/FadeIn'
 import { ArrowRight, FileText } from 'lucide-react'
 import Link from 'next/link'
 import { TypewriterEffect } from '@/components/ui/typewriter-effect'
@@ -37,11 +36,7 @@ export function HeroSection() {
 
   return (
     <div className="relative overflow-hidden">
-      <FadeIn
-        className="container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center"
-        direction="down"
-        once={true}
-      >
+      <div className="container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center">
         <div className="space-y-4">
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
             <span className="block">Hello, I&apos;m a</span>
@@ -72,7 +67,7 @@ export function HeroSection() {
           </a>
         </div>
         <BubbleParticles />
-      </FadeIn>
+      </div>
     </div>
   )
 }
