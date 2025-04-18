@@ -1,37 +1,51 @@
+// app/blog/[slug]/page.tsx
+
 import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
-import { Calendar, ReceiptRussianRuble } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { posts } from '@/data/posts'
 import { HighlightedContent } from '@/components/highlighted-content'
+import type { Metadata } from 'next'
 
+// Updated generateMetadata to handle asynchronous params
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
-}) {
-  const slug = (await params).slug
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
 
-  // Find the post based on slug
   const post = posts.find((post) => post.slug === slug)
+
+  if (!post) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post could not be found',
+    }
+  }
 
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      images: post.image ? [{ url: post.image }] : undefined,
+    },
   }
 }
 
+// Updated component to handle asynchronous params
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const slug = (await params).slug
+  const { slug } = await params
 
-  // Find the post based on slug
   const post = posts.find((post) => post.slug === slug)
 
   if (!post) {
-    // Handle case when post is not found
     return <div>Post not found</div>
   }
 
@@ -79,15 +93,11 @@ export default async function BlogPostPage({
 
           {/* Content */}
           <div className="container max-w-4xl py-12 mx-auto w-fit px-8 lg:px-0">
-            {/* Main Content */}
             <div className="flex-1">
               <HighlightedContent html={post.body} />
             </div>
           </div>
         </article>
-
-        {/* Related Articles */}
-        {/* <RandomPosts slug={slug} count={4} /> */}
       </main>
     </div>
   )
