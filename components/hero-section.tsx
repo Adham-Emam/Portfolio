@@ -5,6 +5,7 @@ import { FadeIn } from './animations/FadeIn'
 import { ArrowRight, FileText } from 'lucide-react'
 import Link from 'next/link'
 import { TypewriterEffect } from '@/components/ui/typewriter-effect'
+import BubbleParticles from './bubble-particles'
 
 export function HeroSection() {
   const words = [
@@ -70,6 +71,7 @@ export function HeroSection() {
             My Resume
           </a>
         </div>
+        <BubbleParticles />
       </FadeIn>
     </div>
   )

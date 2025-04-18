@@ -92,7 +92,6 @@
     box-shadow: 0 0 10px rgba(17, 246, 227, 0.8);
   }
 }
-
 .container {
   width: 100%;
   max-width: 1280px;
@@ -109,4 +108,17 @@
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center 35%;
+}
+@keyframes blow {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh);
+  }
 }
