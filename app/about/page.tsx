@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { TechStack } from '@/components/tech-stack'
 import { ExperienceSection } from '@/components/experience-section'
 import { EducationSection } from '@/components/education-section'
@@ -5,6 +6,12 @@ import { Button } from '@/components/ui/button'
 import { FileText, Mail } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'About Adham Emam | Full-Stack Developer',
+  description:
+    'Portfolio of Adham Emam - Building high-performance web applications with Next.js, Django, and TypeScript. Specializing in scalable architectures and algorithm optimization.',
+}
 
 export default function AboutPage() {
   return (

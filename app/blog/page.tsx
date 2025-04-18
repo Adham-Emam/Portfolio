@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Binary } from 'lucide-react'
@@ -5,6 +6,12 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { posts } from '@/data/posts'
 import { FadeIn } from '@/components/animations/FadeIn'
+
+export const metadata: Metadata = {
+  title: "Adham's Tech Blog",
+  description:
+    'In-depth technical articles on dynamic programming algorithms, TypeScript design patterns, database optimization strategies, and React performance tuning.',
+}
 
 export default function BlogPage() {
   return (

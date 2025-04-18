@@ -1,7 +1,14 @@
+import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Contact Adham Emam | Technical Collaboration',
+  description:
+    "For engineering leadership roles, technical consulting, or open source contributions. Let's discuss complex system design challenges and high-performance solutions.",
+}
 
 export default function ContactPage() {
   return (

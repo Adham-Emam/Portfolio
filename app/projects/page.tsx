@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
@@ -13,6 +14,12 @@ import {
 import { Github, ExternalLink } from 'lucide-react'
 import { projects } from '@/data/projects'
 import { FadeIn } from '@/components/animations/FadeIn'
+
+export const metadata: Metadata = {
+  title: "Adham's Projects",
+  description:
+    'Case studies of my technical projects including Forge (skill exchange platform).',
+}
 
 type Project = {
   id: number
