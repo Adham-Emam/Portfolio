@@ -63,7 +63,7 @@ export function HeroSection() {
           </Button>
           <a
             className="flex items-center justify-center text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
-            href="https://drive.google.com/file/d/1vgFghjNWm_ohGVdMGUPl8aphQWHahs60/view?usp=sharing"
+            href="https://drive.google.com/file/d/1HnL8RrlmOpeYYnBFYhppT-ejfu8jFuUd/view?usp=sharing"
             target="_blank"
           >
             <FileText className="mr-2 h-4 w-4" />
