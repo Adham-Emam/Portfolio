@@ -21,12 +21,12 @@ export const getPosts = cache(() => {
           equals: 'Published',
         },
       },
-      // sorts: [
-      //   {
-      //     property: 'Date',
-      //     direction: 'descending',
-      //   },
-      // ],
+      sorts: [
+        {
+          property: 'Date',
+          direction: 'descending',
+        },
+      ],
     })
     .then((res) => res.results as PageObjectResponse[])
 })
