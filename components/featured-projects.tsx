@@ -36,7 +36,7 @@ export function FeaturedProjects() {
           .map((project, index) => (
             <FadeIn
               key={project.id}
-              className="overflow-hidden relative pb-16"
+              className="overflow-hidden border rounded-md shadow-md relative pb-16"
               direction="left"
               delay={index * 0.1}
             >
