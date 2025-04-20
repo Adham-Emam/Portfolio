@@ -1,12 +1,8 @@
-'use client'
 import Link from 'next/link'
 import { Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
-import { useTheme } from 'next-themes'
 
 export function Footer() {
-  const { resolvedTheme } = useTheme()
-
   return (
     <footer className="border-t">
       <div className="container py-8 md:py-12 w-fit mx-auto px-2 md:px-4 lg:px-16">
@@ -14,15 +10,11 @@ export function Footer() {
           <div>
             <div className="flex items-center md:justify-start mb-4">
               <Image
-                src={
-                  'https://res-console.cloudinary.com/drf4f1euk/thumbnails/v1/image/upload/v1744977988/bG9nb195dGdwMWI=/drilldown'
-                }
+                src="/images/logo.png"
                 alt="logo"
                 width={50}
                 height={50}
-                className={`me-2 ${
-                  resolvedTheme === 'light' && 'brightness-0'
-                }`}
+                className="me-2 brightness-0 dark:brightness-100"
               />
               <h3 className="text-lg font-semibold">Adham Emam</h3>
             </div>

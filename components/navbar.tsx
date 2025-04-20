@@ -10,7 +10,6 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
 import { useState } from 'react'
 import Image from 'next/image'
-import { useTheme } from 'next-themes'
 
 const routes = [
   {
@@ -38,20 +37,17 @@ const routes = [
 export function Navbar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
-  const { resolvedTheme } = useTheme()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-10 flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Image
-            src={
-              'https://res-console.cloudinary.com/drf4f1euk/thumbnails/v1/image/upload/v1744977988/bG9nb195dGdwMWI=/drilldown'
-            }
-            alt="logo"
+            src="/images/logo.png"
+            alt="Logo"
             width={35}
             height={35}
-            className={`me-2 ${resolvedTheme === 'light' && 'brightness-0'}`}
+            className="me-2 brightness-0 dark:brightness-100"
           />
           <Link href="/" className="font-bold text-xl">
             Adham Emam
