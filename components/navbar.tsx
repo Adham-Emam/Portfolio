@@ -47,6 +47,7 @@ export function Navbar() {
             alt="Logo"
             width={35}
             height={35}
+            priority
             className="me-2 brightness-0 dark:brightness-100"
           />
           <Link href="/" className="font-bold text-xl">

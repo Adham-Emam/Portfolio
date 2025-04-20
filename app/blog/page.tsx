@@ -51,6 +51,7 @@ export default async function BlogPage() {
                       alt={(post.properties.Title as any).title[0].plain_text}
                       width={382}
                       height={192}
+                      priority
                       className="h-48 w-full object-cover"
                     />
                   ) : (

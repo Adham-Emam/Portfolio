@@ -26,8 +26,8 @@ export default function Post(props: PostProps) {
           src={bannerImage}
           alt={title}
           fill
-          className="object-cover absolute left-0 top-0 w-full"
           priority
+          className="object-cover absolute left-0 top-0 w-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background to-background/20" />
         <div className="absolute bottom-0 left-0 right-0 p-8 mx-auto w-fit">

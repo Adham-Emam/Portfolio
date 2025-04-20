@@ -14,6 +14,7 @@ export function Footer() {
                 alt="logo"
                 width={50}
                 height={50}
+                priority
                 className="me-2 brightness-0 dark:brightness-100"
               />
               <h3 className="text-lg font-semibold">Adham Emam</h3>
