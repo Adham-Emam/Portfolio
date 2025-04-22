@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/animations/FadeIn'
 
 export const ExperienceSection = async () => {
   const experience = await getExperience()
-  console.log(experience)
+
   return experience.map((item, index) => {
     return (
       <FadeIn key={index} direction="right" delay={index * 0.2}>

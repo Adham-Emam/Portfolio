@@ -25,6 +25,7 @@ export const ExperienceItem = async (props: ExperienceProps) => {
 
   return (
     <>
+      {index !== 0 && <Separator />}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 my-8">
         <div className="md:col-span-1">
           <h3 className="font-semibold">
@@ -41,7 +42,6 @@ export const ExperienceItem = async (props: ExperienceProps) => {
           />
         </div>
       </div>
-      {index !== 1 && <Separator />}
     </>
   )
 }
