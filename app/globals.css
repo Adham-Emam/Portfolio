@@ -80,27 +80,12 @@
     @apply bg-background text-foreground;
   }
 }
-
-@keyframes glow {
-  0% {
-    box-shadow: 0 0 10px rgba(17, 246, 227, 0.8);
-  }
-  50% {
-    box-shadow: 0 0 10px rgba(139, 19, 254, 1);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(17, 246, 227, 0.8);
-  }
-}
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding-left: 2rem;
   padding-right: 2rem;
-}
-.glow-effect {
-  animation: glow 3s ease-in-out infinite;
 }
 .blog-pattern {
   background-color: rgba(0, 0, 0, 0.8);

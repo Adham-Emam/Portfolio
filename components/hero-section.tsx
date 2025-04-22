@@ -51,7 +51,7 @@ export function HeroSection() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" className="glow-effect">
+          <Button asChild size="lg" className="animate-glow">
             <Link href="/projects">
               View My Work
               <ArrowRight className="ml-2 h-4 w-4" />
