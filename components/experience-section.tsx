@@ -10,6 +10,7 @@ export const ExperienceSection = async () => {
       <FadeIn key={index} direction="right" delay={index * 0.2}>
         <ExperienceItem
           id={item.id}
+          index={index}
           title={(item.properties.Title as any).title[0].plain_text}
           institute={(item.properties.Institute as any).rich_text[0].plain_text}
           startDate={(item.properties.Date as any).date.start}

@@ -4,6 +4,7 @@ import { NotionRenderer } from '@notion-render/client'
 import { formatMonthYear } from '@/lib/utils'
 
 interface ExperienceProps {
+  index: number
   id: string
   title: string
   institute: string
@@ -12,7 +13,7 @@ interface ExperienceProps {
 }
 
 export const ExperienceItem = async (props: ExperienceProps) => {
-  const { id, title, institute, startDate, endDate } = props
+  const { index, id, title, institute, startDate, endDate } = props
 
   const content = await getPostContent(id)
 
@@ -40,7 +41,7 @@ export const ExperienceItem = async (props: ExperienceProps) => {
           />
         </div>
       </div>
-      {/* {experience.id !== 1 && <Separator />} */}
+      {index !== 1 && <Separator />}
     </>
   )
 }
