@@ -1,19 +1,22 @@
-import { NotionRenderer } from '@notion-render/client'
-import Post from '@/components/post'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import { NotionRenderer } from '@notion-render/client'
 
+import Post from '@/components/post'
 import { getPostBySlug, getPostContent, notionClient } from '@/lib/notion'
+
+type PageProps = {
+  params: Promise<{ slug: string }>
+}
 
 export async function generateMetadata({
   params,
-}: {
-  params: { slug: string }
-}) {
+}: PageProps): Promise<Metadata> {
   const { slug } = await params
   const post = await getPostBySlug(slug)
 
   if (!post) {
-    return notFound()
+    notFound()
   }
 
   return {
@@ -29,16 +32,12 @@ export async function generateMetadata({
   }
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
+export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params
   const post = await getPostBySlug(slug)
 
   if (!post) {
-    return notFound()
+    notFound()
   }
 
   const content = await getPostContent(post.id)
