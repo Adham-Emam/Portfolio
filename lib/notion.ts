@@ -11,41 +11,107 @@ export const notionClient = new Client({
   auth: process.env.NOTION_TOKEN,
 })
 
-export const getPosts = cache(() => {
-  return notionClient.databases
-    .query({
-      database_id: process.env.DATABASE_ID!,
-      filter: {
-        property: 'Status',
-        status: {
-          equals: 'Published',
-        },
+export const getProjects = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.PROJECTS_ID!,
+    filter: {
+      property: 'Status',
+      status: { equals: 'Published' },
+    },
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
       },
-      sorts: [
-        {
-          property: 'Date',
-          direction: 'descending',
-        },
-      ],
-    })
-    .then((res) => res.results as PageObjectResponse[])
-})
-export const getPostContent = cache((pageId: string) => {
-  return notionClient.blocks.children
-    .list({ block_id: pageId })
-    .then((res) => res.results as BlockObjectResponse[])
+    ],
+  })
+  return res.results as PageObjectResponse[]
 })
 
-export const getPostBySlug = cache((slug: string) => {
-  return notionClient.databases
-    .query({
-      database_id: process.env.DATABASE_ID!,
-      filter: {
-        property: 'Slug',
-        rich_text: {
-          equals: slug,
-        },
+export const getFeaturedProjects = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.PROJECTS_ID!,
+    filter: {
+      property: 'Featured',
+      checkbox: {
+        equals: true,
       },
-    })
-    .then((res) => res.results[0] as PageObjectResponse | undefined)
+    },
+  })
+  return res.results as PageObjectResponse[]
+})
+
+export const getPosts = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.BLOG_ID!,
+    filter: {
+      property: 'Status',
+      status: {
+        equals: 'Published',
+      },
+    },
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+  })
+  return res.results as PageObjectResponse[]
+})
+
+export const getPostContent = cache(async (pageId: string) => {
+  const res = await notionClient.blocks.children.list({ block_id: pageId })
+  return res.results as BlockObjectResponse[]
+})
+
+export const getPostBySlug = cache(async (slug: string) => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.BLOG_ID!,
+    filter: {
+      property: 'Slug',
+      rich_text: {
+        equals: slug,
+      },
+    },
+  })
+  return res.results[0] as PageObjectResponse | undefined
+})
+
+export const getEducation = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.EDUCATION_ID!,
+    filter: {
+      property: 'Status',
+      status: {
+        equals: 'Published',
+      },
+    },
+    sorts: [
+      {
+        property: 'EndDate',
+        direction: 'descending',
+      },
+    ],
+  })
+  return res.results as PageObjectResponse[]
+})
+
+export const getExperience = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.EXPERIENCE_ID!,
+    filter: {
+      property: 'Status',
+      status: {
+        equals: 'Published',
+      },
+    },
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+  })
+  return res.results as PageObjectResponse[]
 })
