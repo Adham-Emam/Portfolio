@@ -1,19 +1,6 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-import { Github, ExternalLink } from 'lucide-react'
-import { projects } from '@/data/projects'
-import { FadeIn } from '@/components/animations/FadeIn'
+import { ProjectCard } from '@/components/project-card'
+import { getProjects, getFeaturedProjects } from '@/lib/notion'
 
 export const metadata: Metadata = {
   title: "Adham's Projects",
@@ -21,83 +8,9 @@ export const metadata: Metadata = {
     'Case studies of my technical projects including Forge (skill exchange platform).',
 }
 
-type Project = {
-  id: number
-  title: string
-  image: string
-  description: string
-  githubUrl: string
-  liveUrl: string
-  date: string
-  tags: string[]
-  featured: boolean
-}
-
-function ProjectCard({ project }: { project: Project }) {
-  return (
-    <Card key={project.id} className="overflow-hidden relative pb-16">
-      <div className="relative h-48 w-full">
-        <Image
-          src={project.image}
-          alt={`Screenshot or preview of ${project.title}`}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover"
-          priority={project.featured}
-        />
-      </div>
-      <CardHeader>
-        <CardTitle>{project.title}</CardTitle>
-        <CardDescription>{project.description}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="capitalize">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-      <CardFooter className="flex justify-between w-full absolute bottom-0">
-        <Button variant="outline" size="sm" asChild>
-          <Link
-            href={project.githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View source code for ${project.title} on GitHub`}
-          >
-            <Github className="mr-2 h-4 w-4" />
-            Code
-          </Link>
-        </Button>
-        {project.liveUrl && (
-          <Button size="sm" asChild>
-            <Link
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Visit live demo of ${project.title}`}
-            >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              Live Demo
-            </Link>
-          </Button>
-        )}
-      </CardFooter>
-    </Card>
-  )
-}
-
-export default function ProjectsPage() {
-  const featuredProjects = projects
-    .slice()
-    .reverse()
-    .filter((project) => project.featured)
-  const otherProjects = projects
-    .slice()
-    .reverse()
-    .filter((project) => !project.featured)
+export default async function ProjectsPage() {
+  const projects = await getProjects()
+  const featuredProjects = await getFeaturedProjects()
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -120,9 +33,21 @@ export default function ProjectsPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project, index) => (
-              <FadeIn key={project.id} direction="right" delay={index * 0.1}>
-                <ProjectCard project={project} />
-              </FadeIn>
+              <ProjectCard
+                key={`${project.id}-${
+                  (project.properties.Title as any).title[0].plain_text
+                }`}
+                index={index}
+                title={(project.properties.Title as any).title[0].plain_text}
+                bannerImage={(project.cover as any).external.url}
+                tags={(project.properties.Tags as any).multi_select}
+                description={
+                  (project.properties.Description as any).rich_text[0]
+                    .plain_text
+                }
+                demo={(project.properties.Demo as any).url}
+                github={(project.properties.Github as any).url}
+              />
             ))}
           </div>
         </div>
@@ -134,14 +59,20 @@ export default function ProjectsPage() {
             All Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project, index) => (
-              <FadeIn
-                key={project.id}
-                direction="right"
-                delay={(index / 3) * 0.1}
-              >
-                <ProjectCard project={project} />
-              </FadeIn>
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index}
+                index={index}
+                title={(project.properties.Title as any).title[0].plain_text}
+                bannerImage={(project.cover as any).external.url}
+                tags={(project.properties.Tags as any).multi_select}
+                description={
+                  (project.properties.Description as any).rich_text[0]
+                    .plain_text
+                }
+                demo={(project.properties.Demo as any).url}
+                github={(project.properties.Github as any).url}
+              />
             ))}
           </div>
         </div>
