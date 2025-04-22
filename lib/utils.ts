@@ -5,7 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function formatDate(dateString: string | Date): string {
+export function formatRelativeDate(
+  dateString: string | Date,
+  fullDate: boolean = true
+): string {
   const date = new Date(dateString)
   const now = new Date()
   const diffInDays = Math.floor(
@@ -24,9 +27,25 @@ export function formatDate(dateString: string | Date): string {
     return `${date.toLocaleDateString('en-US', { weekday: 'long' })} ${timeStr}`
   }
 
-  return `${date.toLocaleDateString('en-US', {
+  return fullDate
+    ? `${date.toLocaleDateString('en-US', {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+      })}, ${timeStr}`
+    : `${date.toLocaleDateString('en-US', {
+        month: 'short',
+        year: 'numeric',
+      })}`
+}
+
+export function formatMonthYear(
+  dateStr: string,
+  locale: string = 'en-US'
+): string {
+  const date = new Date(dateStr)
+  return new Intl.DateTimeFormat(locale, {
     month: 'short',
-    day: 'numeric',
     year: 'numeric',
-  })}, ${timeStr}`
+  }).format(date)
 }

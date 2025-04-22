@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Separator } from '@/components/ui/separator'
 import { Calendar } from 'lucide-react'
 import { HighlightedContent } from '@/components/highlighted-content'
-import { formatDate } from '@/lib/utils'
+import { formatRelativeDate } from '@/lib/utils'
 
 interface PostProps {
   title: string
@@ -47,7 +47,7 @@ export default function Post(props: PostProps) {
               <Separator orientation="vertical" className="h-8" />
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Calendar className="h-4 w-4" />
-                {formatDate(date)}
+                {formatRelativeDate(date)}
               </div>
               <Separator orientation="vertical" className="h-8" />
               <p className="text-sm text-muted-foreground">{readingTime} min</p>

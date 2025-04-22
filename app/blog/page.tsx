@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { getPosts } from '@/lib/notion'
-import { formatDate } from '@/lib/utils'
+import { formatRelativeDate } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: "Adham's Tech Blog",
@@ -63,7 +63,7 @@ export default async function BlogPage() {
                         {(post.properties.Category as any).select.name}
                       </span>
                       <span className="text-sm text-muted-foreground">
-                        {formatDate(post.created_time)}
+                        {formatRelativeDate(post.created_time)}
                       </span>
                     </div>
                     <h2 className="text-xl font-semibold mb-2">
