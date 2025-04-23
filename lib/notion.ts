@@ -165,9 +165,13 @@ export const getNowData = cache(async () => {
   return res.results as PageObjectResponse[]
 })
 
+function formatNotionId(id: string): string {
+  return id.replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5')
+}
+
 export const getNowItemById = cache(async (id: string) => {
   const page = await notionClient.pages.retrieve({
-    page_id: id,
+    page_id: formatNotionId(id),
   })
 
   return page as PageObjectResponse
