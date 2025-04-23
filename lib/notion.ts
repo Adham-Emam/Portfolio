@@ -15,8 +15,18 @@ export const getProjects = cache(async () => {
   const res = await notionClient.databases.query({
     database_id: process.env.PROJECTS_ID!,
     filter: {
-      property: 'Status',
-      status: { equals: 'Published' },
+      and: [
+        {
+          property: 'Status',
+          status: { equals: 'Published' },
+        },
+        {
+          property: 'Featured',
+          checkbox: {
+            equals: false,
+          },
+        },
+      ],
     },
     sorts: [
       {
@@ -32,10 +42,20 @@ export const getFeaturedProjects = cache(async () => {
   const res = await notionClient.databases.query({
     database_id: process.env.PROJECTS_ID!,
     filter: {
-      property: 'Featured',
-      checkbox: {
-        equals: true,
-      },
+      and: [
+        {
+          property: 'Status',
+          status: {
+            equals: 'Published',
+          },
+        },
+        {
+          property: 'Featured',
+          checkbox: {
+            equals: true,
+          },
+        },
+      ],
     },
   })
   return res.results as PageObjectResponse[]
