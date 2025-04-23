@@ -17,7 +17,7 @@ export default async function NowPage() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 px-2 md:px-4 lg:px-8 gap-6 space-y-8 py-8">
+      <section className="container grid grid-cols-1 lg:grid-cols-2 px-2 md:px-4 lg:px-8 gap-6 space-y-8 py-8">
         {nowSections.map((section, index) => (
           <NowSection
             key={section.id}
