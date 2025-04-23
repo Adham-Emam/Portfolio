@@ -29,6 +29,10 @@ const routes = [
     label: 'Blog',
   },
   {
+    href: '/now',
+    label: 'Now',
+  },
+  {
     href: '/contact',
     label: 'Contact',
   },
@@ -55,7 +59,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden md:flex gap-6">
+        <nav className="hidden ms-auto mr-6 md:flex gap-6">
           {routes.map((route) => (
             <Link
               key={route.href}

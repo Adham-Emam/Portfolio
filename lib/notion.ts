@@ -135,3 +135,40 @@ export const getExperience = cache(async () => {
   })
   return res.results as PageObjectResponse[]
 })
+
+export const getNowData = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.NOW_ID!,
+    filter: {
+      and: [
+        {
+          property: 'Status',
+          status: {
+            does_not_equal: 'Completed',
+          },
+        },
+        {
+          property: 'Status',
+          status: {
+            does_not_equal: 'Archived',
+          },
+        },
+      ],
+    },
+    sorts: [
+      {
+        property: 'Date',
+        direction: 'descending',
+      },
+    ],
+  })
+  return res.results as PageObjectResponse[]
+})
+
+export const getNowItemById = cache(async (id: string) => {
+  const page = await notionClient.pages.retrieve({
+    page_id: id,
+  })
+
+  return page as PageObjectResponse
+})
