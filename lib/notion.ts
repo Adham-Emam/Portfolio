@@ -89,7 +89,7 @@ export const getEducation = cache(async () => {
     },
     sorts: [
       {
-        property: 'EndDate',
+        property: 'Date',
         direction: 'descending',
       },
     ],

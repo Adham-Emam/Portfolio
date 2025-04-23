@@ -22,17 +22,12 @@ export const EducationSection = async () => {
             {(education.properties.Institute as any).rich_text[0].plain_text}
             {(education.properties.Progress as any).formula.number === 1 ? (
               <span className="text-sm text-muted-foreground">
-                ,{' '}
-                {formatMonthYear(
-                  (education.properties.EndDate as any).date.start
-                )}
+                , {formatMonthYear((education.properties.Date as any).date.end)}
               </span>
             ) : (
               <>
                 , Expected{' '}
-                {formatMonthYear(
-                  (education.properties.EndDate as any).date.start
-                )}
+                {formatMonthYear((education.properties.Date as any).date.end)}
                 <div className="w-full mt-4 flex justify-between items-center gap-4">
                   {/* 1. “In Progress” label */}
                   <span className="text-sm font-medium text-blue-600">
