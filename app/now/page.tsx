@@ -3,6 +3,7 @@ import { getNowData } from '@/lib/notion'
 
 export default async function NowPage() {
   const nowSections = await getNowData()
+  console.log(nowSections)
 
   return (
     <div className="min-h-screen pb-16 ">
@@ -22,7 +23,7 @@ export default async function NowPage() {
           <NowSection
             key={section.id}
             index={index}
-            id={section.id}
+            id={(section.properties.ID as any).number}
             title={(section.properties.Title as any).title[0].plain_text}
             category={(section.properties.Category as any).select.name}
             status={(section.properties.Status as any).status.name}

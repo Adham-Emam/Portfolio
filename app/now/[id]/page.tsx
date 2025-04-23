@@ -9,7 +9,7 @@ import { getNowItemById, getPostContent, notionClient } from '@/lib/notion'
 import { NotionRenderer } from '@notion-render/client'
 
 type PageProps = {
-  params: Promise<{ id: string }>
+  params: Promise<{ id: number }>
 }
 
 export async function generateMetadata({
@@ -47,7 +47,7 @@ export default async function NowDetailPage({ params }: PageProps) {
     notFound()
   }
 
-  const content = await getPostContent(id)
+  const content = await getPostContent(nowItem.id)
 
   const notionRenderer = new NotionRenderer({
     client: notionClient,
