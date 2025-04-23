@@ -26,7 +26,7 @@ export function Footer() {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-1 md:grid-cols-2 space-y-2">
               <li>
                 <Link
                   href="/"
@@ -49,6 +49,22 @@ export function Footer() {
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/now"
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                >
+                  Now
                 </Link>
               </li>
               <li>
