@@ -7,7 +7,7 @@ import { formatRelativeDate } from '@/lib/utils'
 
 interface NowProps {
   index: number
-  id: number
+  id: string
   title: string
   description: string
   category: string

@@ -165,15 +165,10 @@ export const getNowData = cache(async () => {
   return res.results as PageObjectResponse[]
 })
 
-export const getNowItemById = cache(async (id: number) => {
-  const res = await notionClient.databases.query({
-    database_id: process.env.NOW_ID!,
-    filter: {
-      property: 'ID',
-      number: {
-        equals: Number(id),
-      },
-    },
+export const getNowItemById = cache(async (id: string) => {
+  const page = await notionClient.pages.retrieve({
+    page_id: id,
   })
-  return res.results[0] as PageObjectResponse | undefined
+
+  return page as PageObjectResponse
 })
