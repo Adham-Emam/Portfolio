@@ -74,7 +74,7 @@ export function TechStack() {
                   fill
                   className={cn(
                     'object-contain',
-                    ['Next.js', 'Express.js', 'GitHub', 'Flask'].includes(
+                    ['Next.js', 'Express.js', 'Github', 'Flask'].includes(
                       tech.name
                     ) && 'dark:invert'
                   )}
