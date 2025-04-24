@@ -5,6 +5,8 @@ import { NotionRenderer } from '@notion-render/client'
 import Post from '@/components/post'
 import { getPostBySlug, getPostContent, notionClient } from '@/lib/notion'
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 type PageProps = {
   params: Promise<{ slug: string }>
 }

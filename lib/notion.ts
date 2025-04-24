@@ -61,7 +61,7 @@ export const getFeaturedProjects = cache(async () => {
   return res.results as PageObjectResponse[]
 })
 
-export const getPosts = cache(async () => {
+export const getPosts = async () => {
   const res = await notionClient.databases.query({
     database_id: process.env.BLOG_ID!,
     filter: {
@@ -78,14 +78,14 @@ export const getPosts = cache(async () => {
     ],
   })
   return res.results as PageObjectResponse[]
-})
+}
 
-export const getPostContent = cache(async (pageId: string) => {
+export const getPostContent = async (pageId: string) => {
   const res = await notionClient.blocks.children.list({ block_id: pageId })
   return res.results as BlockObjectResponse[]
-})
+}
 
-export const getPostBySlug = cache(async (slug: string) => {
+export const getPostBySlug = async (slug: string) => {
   const res = await notionClient.databases.query({
     database_id: process.env.BLOG_ID!,
     filter: {
@@ -96,7 +96,7 @@ export const getPostBySlug = cache(async (slug: string) => {
     },
   })
   return res.results[0] as PageObjectResponse | undefined
-})
+}
 
 export const getEducation = cache(async () => {
   const res = await notionClient.databases.query({
@@ -136,7 +136,7 @@ export const getExperience = cache(async () => {
   return res.results as PageObjectResponse[]
 })
 
-export const getNowData = cache(async () => {
+export const getNowData = async () => {
   const res = await notionClient.databases.query({
     database_id: process.env.NOW_ID!,
     filter: {
@@ -163,15 +163,15 @@ export const getNowData = cache(async () => {
     ],
   })
   return res.results as PageObjectResponse[]
-})
+}
 
-export const getNowItemById = cache(async (id: string) => {
+export const getNowItemById = async (id: string) => {
   const page = await notionClient.pages.retrieve({
     page_id: id,
   })
 
   return page as PageObjectResponse
-})
+}
 
 export const getTechnologies = cache(async () => {
   const res = await notionClient.databases.query({

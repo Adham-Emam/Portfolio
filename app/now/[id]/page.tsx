@@ -8,6 +8,8 @@ import { formatRelativeDate } from '@/lib/utils'
 import { getNowItemById, getPostContent, notionClient } from '@/lib/notion'
 import { NotionRenderer } from '@notion-render/client'
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 type PageProps = {
   params: Promise<{ id: string }>
 }

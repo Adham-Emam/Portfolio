@@ -8,6 +8,8 @@ import { FadeIn } from '@/components/animations/FadeIn'
 import { getPosts } from '@/lib/notion'
 import { formatRelativeDate } from '@/lib/utils'
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 export const metadata: Metadata = {
   title: "Adham's Tech Blog",
   description:

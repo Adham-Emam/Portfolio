@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Portfolio of Adham Emam - Explore all the projects, learnings and posts that I'm working on now.",
 }
 
-export const revalidate = 10 // Revalidate every 60 seconds
+export const revalidate = 60 // Revalidate every 60 seconds
 
 export default async function NowPage() {
   const nowSections = await getNowData()
