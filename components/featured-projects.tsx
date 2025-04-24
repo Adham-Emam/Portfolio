@@ -8,7 +8,7 @@ export async function FeaturedProjects() {
   const projects = await getFeaturedProjects()
 
   return (
-    <section aria-label="Featured Projects" className="space-y-8">
+    <section className="space-y-8">
       <div className="flex justify-between items-center">
         <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
         <Button asChild variant="ghost">
