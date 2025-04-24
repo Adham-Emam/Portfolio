@@ -1,12 +1,20 @@
+import { Metadata } from 'next'
 import { NowSection } from '@/components/now-section'
 import { getNowData } from '@/lib/notion'
 
+export const metadata: Metadata = {
+  title: "What I'm Doing Now",
+  description:
+    "Portfolio of Adham Emam - Explore all the projects, learnings and posts that I'm working on now.",
+}
+
+export const revalidate = 10 // Revalidate every 60 seconds
+
 export default async function NowPage() {
   const nowSections = await getNowData()
-  console.log(nowSections)
 
   return (
-    <div className="min-h-screen pb-16 ">
+    <div className="min-h-screen pb-16">
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="container text-center">
           <h1 className="text-4xl font-bold tracking-tight mb-4">
