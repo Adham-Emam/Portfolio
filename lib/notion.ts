@@ -172,3 +172,10 @@ export const getNowItemById = cache(async (id: string) => {
 
   return page as PageObjectResponse
 })
+
+export const getTechnologies = cache(async () => {
+  const res = await notionClient.databases.query({
+    database_id: process.env.TECHNOLOGIES_ID!,
+  })
+  return res.results as PageObjectResponse[]
+})

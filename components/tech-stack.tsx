@@ -1,14 +1,37 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { cn } from '@/lib/utils'
 import { Badge } from '@/components/ui/badge'
-import { technologies } from '@/data/technologies'
+import { cn } from '@/lib/utils'
 import { Scale } from '@/components/animations/Scale'
+import { Loader2 } from 'lucide-react'
 
 export function TechStack() {
   const [filter, setFilter] = useState('all')
+  const [technologies, setTechnologies] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch('/api/technologies')
+      const data = await res.json()
+
+      const parsed = data.reverse().map((page: any) => {
+        const props = page.properties
+        return {
+          name: props.Name.title[0].plain_text,
+          category: props.Category.select.name.toLowerCase(),
+          icon: props.Icon.files[0]?.external.url || '/fallback.png',
+        }
+      })
+
+      setTechnologies(parsed)
+      setLoading(false)
+    }
+
+    fetchData()
+  }, [])
 
   const filteredTech =
     filter === 'all'
@@ -17,63 +40,53 @@ export function TechStack() {
 
   return (
     <div className="space-y-6">
+      {/* Filter Badges */}
       <div className="flex flex-wrap justify-center gap-2">
-        <Badge
-          variant={filter === 'all' ? 'default' : 'outline'}
-          className="cursor-pointer px-4 py-2"
-          onClick={() => setFilter('all')}
-        >
-          All
-        </Badge>
-        <Badge
-          variant={filter === 'frontend' ? 'default' : 'outline'}
-          className="cursor-pointer px-4 py-2"
-          onClick={() => setFilter('frontend')}
-        >
-          Frontend
-        </Badge>
-        <Badge
-          variant={filter === 'backend' ? 'default' : 'outline'}
-          className="cursor-pointer px-4 py-2"
-          onClick={() => setFilter('backend')}
-        >
-          Backend
-        </Badge>
-        <Badge
-          variant={filter === 'devops' ? 'default' : 'outline'}
-          className="cursor-pointer px-4 py-2"
-          onClick={() => setFilter('devops')}
-        >
-          DevOps
-        </Badge>
-      </div>
-
-      <div className="grid grid-cols-2 px-2 md:px-4 lg:px-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        {filteredTech.map((tech, index) => (
-          <Scale
-            key={index}
-            className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-all"
-            delay={index * 0.02}
+        {['all', 'frontend', 'backend', 'devops'].map((cat) => (
+          <Badge
+            key={cat}
+            variant={filter === cat ? 'default' : 'outline'}
+            className="cursor-pointer px-4 py-2"
+            onClick={() => setFilter(cat)}
           >
-            <div className="relative h-12 w-12 mb-3">
-              <Image
-                src={tech.icon}
-                alt={tech.name}
-                fill
-                className={cn(
-                  'object-contain',
-                  (tech.name === 'Next.js' ||
-                    tech.name === 'Express.js' ||
-                    tech.name === 'GitHub' ||
-                    tech.name === 'Flask') &&
-                    'dark:invert'
-                )}
-              />
-            </div>
-            <span className="text-center text-sm font-medium">{tech.name}</span>
-          </Scale>
+            {cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </Badge>
         ))}
       </div>
+
+      {/* Grid of Tech */}
+      {loading ? (
+        <div className="flex justify-center items-center h-24">
+          <Loader2 className=" animate-spin" />
+        </div>
+      ) : (
+        <div className="grid grid-cols-2 px-2 md:px-4 lg:px-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {filteredTech.map((tech, index) => (
+            <Scale
+              key={index}
+              className="flex flex-col items-center p-4 rounded-lg border bg-card hover:shadow-md transition-all"
+              delay={index * 0.02}
+            >
+              <div className="relative h-12 w-12 mb-3">
+                <Image
+                  src={tech.icon}
+                  alt={tech.name}
+                  fill
+                  className={cn(
+                    'object-contain',
+                    ['Next.js', 'Express.js', 'GitHub', 'Flask'].includes(
+                      tech.name
+                    ) && 'dark:invert'
+                  )}
+                />
+              </div>
+              <span className="text-center text-sm font-medium">
+                {tech.name}
+              </span>
+            </Scale>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
