@@ -29,7 +29,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.variable}>
         <main className="main-content">
-          <SpeedInsights />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -38,6 +37,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <SpeedInsights />
             <Toaster />
             <Footer />
           </ThemeProvider>
