@@ -8,6 +8,8 @@ export const metadata: Metadata = {
     'Case studies of my technical projects including Forge (skill exchange platform).',
 }
 
+export const revalidate = 60 // Revalidate every 60 seconds
+
 export default async function ProjectsPage() {
   const projects = await getProjects()
   const featuredProjects = await getFeaturedProjects()
