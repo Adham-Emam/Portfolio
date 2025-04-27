@@ -28,7 +28,7 @@ export function ProjectCard(props: ProjectProps) {
 
   return (
     <FadeIn direction="right" delay={(index * 0.1) / 3}>
-      <Card className="overflow-hidden relative pb-16 animate-neon-glow">
+      <Card className="overflow-hidden relative pb-16 animate-neon-glow min-h-[570px]">
         <div className="relative h-48 w-full">
           <Image
             src={bannerImage}
@@ -45,7 +45,7 @@ export function ProjectCard(props: ProjectProps) {
           <CardDescription>{description}</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 md:absolute md:bottom-20">
             {tags.map((tag, index) => (
               <Badge key={index} variant="secondary" className="capitalize">
                 {tag.name}

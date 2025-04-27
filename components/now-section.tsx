@@ -67,7 +67,9 @@ export async function NowSection(props: NowProps) {
         <Progress value={progress * 100} />
       </div>
 
-      <p className="space-y-3 mb-6 text-muted-foreground">{description}</p>
+      <p className="space-y-3 mb-6 text-muted-foreground line-clamp-none lg:line-clamp-2">
+        {description}
+      </p>
 
       <div className="flex items-center justify-between text-sm">
         <div className="flex items-center text-muted-foreground">

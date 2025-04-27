@@ -68,10 +68,10 @@ export default async function BlogPage() {
                         {formatRelativeDate(post.created_time)}
                       </span>
                     </div>
-                    <h2 className="text-xl font-semibold mb-2">
+                    <h2 className="text-xl font-semibold mb-2 md:line-clamp-2">
                       {(post.properties.Title as any).title[0].plain_text}
                     </h2>
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-muted-foreground mb-4 md:line-clamp-3">
                       {(post.properties.Excerpt as any).rich_text[0].plain_text}
                     </p>
                     <div className="absolute right-5 bottom-5">
