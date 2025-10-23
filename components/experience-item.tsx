@@ -12,6 +12,8 @@ interface ExperienceProps {
   endDate: string
 }
 
+export const revalidate = 60
+
 export const ExperienceItem = async (props: ExperienceProps) => {
   const { index, id, title, institute, startDate, endDate } = props
 

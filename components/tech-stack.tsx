@@ -7,6 +7,8 @@ import { cn } from '@/lib/utils'
 import { Scale } from '@/components/animations/Scale'
 import { Loader2 } from 'lucide-react'
 
+export const revalidate = 60
+
 export function TechStack() {
   const [filter, setFilter] = useState('all')
   const [technologies, setTechnologies] = useState<any[]>([])
@@ -22,7 +24,7 @@ export function TechStack() {
         return {
           name: props.Name.title[0].plain_text,
           category: props.Category.select.name.toLowerCase(),
-          icon: props.Icon.files[0]?.external.url || '/fallback.png',
+          icon: props.Icon.files[0]?.external.url,
         }
       })
 

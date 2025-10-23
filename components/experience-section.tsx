@@ -2,6 +2,8 @@ import { getExperience } from '@/lib/notion'
 import { ExperienceItem } from './experience-item'
 import { FadeIn } from '@/components/animations/FadeIn'
 
+export const revalidate = 60
+
 export const ExperienceSection = async () => {
   const experience = await getExperience()
 

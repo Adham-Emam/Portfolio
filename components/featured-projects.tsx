@@ -4,6 +4,8 @@ import { ArrowRight } from 'lucide-react'
 import { ProjectCard } from '@/components/project-card'
 import { getFeaturedProjects } from '@/lib/notion'
 
+export const revalidate = 60
+
 export async function FeaturedProjects() {
   const projects = await getFeaturedProjects()
 
@@ -27,7 +29,7 @@ export async function FeaturedProjects() {
             }`}
             index={index}
             title={(project.properties.Title as any).title[0].plain_text}
-            bannerImage={(project.cover as any).external.url}
+            bannerImage={(project.cover as any).external.url || ''}
             tags={(project.properties.Tags as any).multi_select}
             description={
               (project.properties.Description as any).rich_text[0].plain_text

@@ -3,6 +3,8 @@ import { getEducation } from '@/lib/notion'
 import { formatMonthYear } from '@/lib/utils'
 import { Progress } from '@/components/ui/progress'
 
+export const revalidate = 60
+
 export const EducationSection = async () => {
   const education = await getEducation()
 

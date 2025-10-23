@@ -30,15 +30,17 @@ export function ProjectCard(props: ProjectProps) {
     <FadeIn direction="right" delay={(index * 0.1) / 3}>
       <Card className="overflow-hidden relative pb-16 animate-neon-glow min-h-[570px]">
         <div className="relative h-48 w-full">
-          <Image
-            src={bannerImage}
-            alt={`Screenshot or preview of ${title}`}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
-            loading="eager"
-            priority
-          />
+          {bannerImage && (
+            <Image
+              src={bannerImage}
+              alt={`Screenshot or preview of ${title}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
+              loading="eager"
+              priority
+            />
+          )}
         </div>
         <CardHeader>
           <CardTitle>{title}</CardTitle>

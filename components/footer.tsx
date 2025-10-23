@@ -1,6 +1,7 @@
 import Link from 'next/link'
-import { Github, Linkedin, Mail } from 'lucide-react'
 import Image from 'next/image'
+import { IoMdMail } from 'react-icons/io'
+import { FaGithub, FaLinkedin, FaDev } from 'react-icons/fa'
 
 export function Footer() {
   return (
@@ -53,14 +54,6 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blog"
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/now"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
@@ -86,7 +79,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Github className="h-6 w-6" />
+                <FaGithub className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link
@@ -95,14 +88,23 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Linkedin className="h-6 w-6" />
+                <FaLinkedin className="h-6 w-6" />
                 <span className="sr-only">LinkedIn</span>
+              </Link>
+              <Link
+                href="https://dev.to/adham_emam"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <FaDev className="h-6 w-6" />
+                <span className="sr-only">Dev.to</span>
               </Link>
               <Link
                 href="mailto:adhamh372002@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Mail className="h-6 w-6" />
+                <IoMdMail className="h-6 w-6" />
                 <span className="sr-only">Email</span>
               </Link>
             </div>

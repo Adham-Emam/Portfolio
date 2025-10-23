@@ -16,6 +16,8 @@ interface NowProps {
   updatedAt: string
 }
 
+export const revalidate = 60
+
 export async function NowSection(props: NowProps) {
   const {
     index,

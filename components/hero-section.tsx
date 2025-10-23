@@ -5,6 +5,8 @@ import { ArrowRight, FileText } from 'lucide-react'
 import Link from 'next/link'
 import { TypewriterEffect } from '@/components/ui/typewriter-effect'
 import BubbleParticles from './bubble-particles'
+import { IoMdMail } from 'react-icons/io'
+import { FaGithub, FaLinkedin, FaDev } from 'react-icons/fa'
 
 export function HeroSection() {
   const words = [
@@ -50,6 +52,42 @@ export function HeroSection() {
             beautiful, functional, and user-friendly applications.
           </p>
         </div>
+        <div className="flex justify-center align-center space-x-4">
+          <Link
+            href="https://github.com/Adham-Emam"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <FaGithub className="h-6 w-6" />
+            <span className="sr-only">GitHub</span>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/adham-emam-91935a229/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <FaLinkedin className="h-6 w-6" />
+            <span className="sr-only">LinkedIn</span>
+          </Link>
+          <Link
+            href="https://dev.to/adham_emam"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <FaDev className="h-6 w-6" />
+            <span className="sr-only">Dev.to</span>
+          </Link>
+          <Link
+            href="mailto:adhamh372002@gmail.com"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <IoMdMail className="h-6 w-6" />
+            <span className="sr-only">Email</span>
+          </Link>
+        </div>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button asChild size="lg" className="animate-glow">
             <Link href="/projects">
@@ -59,7 +97,7 @@ export function HeroSection() {
           </Button>
           <a
             className="flex items-center justify-center text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
-            href="https://drive.google.com/file/d/1HnL8RrlmOpeYYnBFYhppT-ejfu8jFuUd/view?usp=sharing"
+            href="https://docs.google.com/document/d/13aXIPEkhgjbCTn_E_HIOdDrReM0O7LJa4OMuL9oP9Uk/edit?usp=sharing"
             target="_blank"
           >
             <FileText className="mr-2 h-4 w-4" />

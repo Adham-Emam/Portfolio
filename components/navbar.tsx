@@ -25,10 +25,6 @@ const routes = [
     label: 'Projects',
   },
   {
-    href: '/blog',
-    label: 'Blog',
-  },
-  {
     href: '/now',
     label: 'Now',
   },
