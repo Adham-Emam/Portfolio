@@ -41,7 +41,7 @@ export default async function ProjectsPage() {
                 }`}
                 index={index}
                 title={(project.properties.Title as any).title[0].plain_text}
-                bannerImage={(project.cover as any).external.url}
+                bannerImage={(project.cover as any).external.url || ''}
                 tags={(project.properties.Tags as any).multi_select}
                 description={
                   (project.properties.Description as any).rich_text[0]

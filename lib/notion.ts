@@ -143,6 +143,18 @@ export const getNowItemById = async (id: string) => {
 export const getTechnologies = async () => {
   const res = await notionClient.databases.query({
     database_id: process.env.TECHNOLOGIES_ID!,
+    filter: {
+      property: 'Status',
+      status: {
+        equals: 'Published',
+      },
+    },
+    sorts: [
+      {
+        property: 'ID',
+        direction: 'ascending',
+      },
+    ],
   })
   return res.results as PageObjectResponse[]
 }
