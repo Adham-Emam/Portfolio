@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 interface BubbleParticlesProps {
   count?: number
-  width?: number
-  height?: number
+  size?: number
   minSpeed?: number
   maxSpeed?: number
   maxDelay?: number
@@ -13,8 +12,7 @@ interface BubbleParticlesProps {
 
 const BubbleParticles: React.FC<BubbleParticlesProps> = ({
   count = 30,
-  width = 20,
-  height = 40,
+  size = 20,
   minSpeed = 10000,
   maxSpeed = 50000,
   maxDelay = 5000,
@@ -32,12 +30,12 @@ const BubbleParticles: React.FC<BubbleParticlesProps> = ({
       return (
         <div
           key={i}
-          className="absolute rounded-lg opacity-0 bg-orange-500/10 backdrop-filter backdrop-blur-2xl z-[-1]"
+          className="absolute rounded-lg opacity-0 bg-foreground z-[-1]"
           style={{
-            bottom: `-${height}px`,
+            bottom: `-${size}px`,
             left: `${left}%`,
-            width: `${width}px`,
-            height: `${height}px`,
+            width: `${size}px`,
+            height: `${size}px`,
             animation: `blow ${speed}ms infinite`,
             animationDelay: `${delay}ms`,
           }}
@@ -46,7 +44,7 @@ const BubbleParticles: React.FC<BubbleParticlesProps> = ({
     })
 
     setBubbles(generatedBubbles)
-  }, [count, width, height, minSpeed, maxSpeed, maxDelay])
+  }, [count, size, minSpeed, maxSpeed, maxDelay])
 
   return <div className="absolute bottom-0 left-0 w-full">{bubbles}</div>
 }
