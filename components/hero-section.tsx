@@ -38,7 +38,7 @@ export function HeroSection() {
 
   return (
     <>
-      <div className="absolute h-full w-full bg-gray-800/10 bg-clip-padding backdrop-filter backdrop-blur-xl z-0"></div>
+      <div className="absolute h-full w-full bg-gray-800/10 bg-clip-padding backdrop-filter backdrop-blur-sm z-0"></div>
       <div className="overflow-hidden">
         <div className="relative container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center">
           <div className="space-y-4">
