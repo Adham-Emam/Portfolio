@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/contact-form'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Phone, Github, Linkedin } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -47,7 +47,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <p className="text-muted-foreground">
-                        adhamh372002@gmail.com
+                        adhamemam372002@gmail.com
                       </p>
                     </div>
                   </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </Link>
 
                     <Link
-                      href="mailto:adhamh372002@gmail.com"
+                      href="mailto:mrado372002@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"

@@ -82,7 +82,7 @@ export default function Home() {
                 <div>
                   <h4 className="font-medium">Email</h4>
                   <p className="text-muted-foreground">
-                    adhamh372002@gmail.com
+                    adhamemam372002@gmail.com
                   </p>
                 </div>
                 <div>
