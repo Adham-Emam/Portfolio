@@ -37,75 +37,78 @@ export function HeroSection() {
   ]
 
   return (
-    <div className="relative overflow-hidden">
-      <div className="container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center">
-        <div className="space-y-4">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-            <span className="block">Hello, I&apos;m a</span>
-          </h1>
-          <TypewriterEffect
-            words={words}
-            className="text-2xl md:text-4xl mx-auto w-fit font-bold text-foreground tracking-tighter"
-          />
-          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-            Specializing in modern web technologies and frameworks to create
-            beautiful, functional, and user-friendly applications.
-          </p>
-        </div>
-        <div className="flex justify-center align-center space-x-4">
-          <Link
-            href="https://github.com/Adham-Emam"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            <FaGithub className="h-6 w-6" />
-            <span className="sr-only">GitHub</span>
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/adham-emam-91935a229/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            <FaLinkedin className="h-6 w-6" />
-            <span className="sr-only">LinkedIn</span>
-          </Link>
-          <Link
-            href="https://dev.to/adham_emam"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            <FaDev className="h-6 w-6" />
-            <span className="sr-only">Dev.to</span>
-          </Link>
-          <Link
-            href="mailto:adhamh372002@gmail.com"
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            <IoMdMail className="h-6 w-6" />
-            <span className="sr-only">Email</span>
-          </Link>
-        </div>
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" className="animate-glow">
-            <Link href="/projects">
-              View My Work
-              <ArrowRight className="ml-2 h-4 w-4" />
+    <>
+      <div className="absolute h-full w-full bg-gray-800/10 bg-clip-padding backdrop-filter backdrop-blur-xl z-0"></div>
+      <div className="overflow-hidden">
+        <div className="relative container mx-auto py-16 md:py-24 lg:py-32 space-y-8 text-center">
+          <div className="space-y-4">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
+              <span className="block">Hello, I&apos;m a</span>
+            </h1>
+            <TypewriterEffect
+              words={words}
+              className="text-2xl md:text-4xl mx-auto w-fit font-bold text-foreground tracking-tighter"
+            />
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+              Specializing in modern web technologies and frameworks to create
+              beautiful, functional, and user-friendly applications.
+            </p>
+          </div>
+          <div className="flex justify-center align-center space-x-4">
+            <Link
+              href="https://github.com/Adham-Emam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaGithub className="h-6 w-6" />
+              <span className="sr-only">GitHub</span>
             </Link>
-          </Button>
-          <a
-            className="flex items-center justify-center text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
-            href="https://docs.google.com/document/d/13aXIPEkhgjbCTn_E_HIOdDrReM0O7LJa4OMuL9oP9Uk/edit?usp=sharing"
-            target="_blank"
-          >
-            <FileText className="mr-2 h-4 w-4" />
-            My Resume
-          </a>
+            <Link
+              href="https://www.linkedin.com/in/adham-emam-91935a229/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaLinkedin className="h-6 w-6" />
+              <span className="sr-only">LinkedIn</span>
+            </Link>
+            <Link
+              href="https://dev.to/adham_emam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <FaDev className="h-6 w-6" />
+              <span className="sr-only">Dev.to</span>
+            </Link>
+            <Link
+              href="mailto:adhamh372002@gmail.com"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              <IoMdMail className="h-6 w-6" />
+              <span className="sr-only">Email</span>
+            </Link>
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Button asChild size="lg" className="animate-glow">
+              <Link href="/projects">
+                View My Work
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <a
+              className="flex items-center justify-center text-muted-foreground bg-muted/50 hover:bg-muted/30 rounded-md px-4 py-2"
+              href="https://docs.google.com/document/d/13aXIPEkhgjbCTn_E_HIOdDrReM0O7LJa4OMuL9oP9Uk/edit?usp=sharing"
+              target="_blank"
+            >
+              <FileText className="mr-2 h-4 w-4" />
+              My Resume
+            </a>
+          </div>
         </div>
         <BubbleParticles />
       </div>
-    </div>
+    </>
   )
 }

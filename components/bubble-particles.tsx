@@ -4,7 +4,8 @@ import React, { useEffect, useState } from 'react'
 
 interface BubbleParticlesProps {
   count?: number
-  size?: number
+  width?: number
+  height?: number
   minSpeed?: number
   maxSpeed?: number
   maxDelay?: number
@@ -12,9 +13,10 @@ interface BubbleParticlesProps {
 
 const BubbleParticles: React.FC<BubbleParticlesProps> = ({
   count = 30,
-  size = 10,
-  minSpeed = 3000,
-  maxSpeed = 10000,
+  width = 20,
+  height = 40,
+  minSpeed = 10000,
+  maxSpeed = 50000,
   maxDelay = 5000,
 }) => {
   const [bubbles, setBubbles] = useState<React.ReactNode[]>([])
@@ -30,12 +32,12 @@ const BubbleParticles: React.FC<BubbleParticlesProps> = ({
       return (
         <div
           key={i}
-          className="absolute rounded-full opacity-0 bg-foreground"
+          className="absolute rounded-lg opacity-0 bg-orange-500/10 backdrop-filter backdrop-blur-2xl z-[-1]"
           style={{
-            bottom: `-${size}px`,
+            bottom: `-${height}px`,
             left: `${left}%`,
-            width: `${size}px`,
-            height: `${size}px`,
+            width: `${width}px`,
+            height: `${height}px`,
             animation: `blow ${speed}ms infinite`,
             animationDelay: `${delay}ms`,
           }}
@@ -44,7 +46,7 @@ const BubbleParticles: React.FC<BubbleParticlesProps> = ({
     })
 
     setBubbles(generatedBubbles)
-  }, [count, size, minSpeed, maxSpeed, maxDelay])
+  }, [count, width, height, minSpeed, maxSpeed, maxDelay])
 
   return <div className="absolute bottom-0 left-0 w-full">{bubbles}</div>
 }
