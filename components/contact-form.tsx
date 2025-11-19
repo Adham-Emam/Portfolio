@@ -33,6 +33,8 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>(
     {}
   )
+  const [remainingChars, setRemainingChars] = useState(5000)
+
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (
@@ -44,6 +46,10 @@ export function ContactForm() {
     // Clear error when user types
     if (errors[name as keyof FormData]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }))
+    }
+
+    if (name === 'message') {
+      setRemainingChars(5000 - value.length)
     }
   }
 
@@ -117,14 +123,27 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Textarea
-          name="message"
-          placeholder="Your Message"
-          rows={5}
-          value={formData.message}
-          onChange={handleChange}
-          className={errors.message ? 'border-destructive' : ''}
-        />
+        <div className="relative">
+          <Textarea
+            name="message"
+            placeholder="Your Message"
+            rows={5}
+            value={formData.message}
+            onChange={handleChange}
+            className={`pr-12 ${errors.message ? 'border-destructive' : ''}`}
+            maxLength={5000}
+          />
+          <span
+            aria-live="polite"
+            className={`block text-right px-2  rounded-full text-sm ${
+              remainingChars <= 50
+                ? 'text-destructive'
+                : 'text-muted-foreground'
+            }`}
+          >
+            {remainingChars} remaining characters
+          </span>
+        </div>
         {errors.message && (
           <p className="text-sm text-destructive">{errors.message}</p>
         )}
