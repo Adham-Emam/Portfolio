@@ -14,6 +14,9 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
+  const startDate = new Date(2021, 1, 1).getFullYear()
+  const nowDate = new Date().getFullYear()
+
   return (
     <div className="flex min-h-screen flex-col">
       <section className="py-16 md:py-24">
@@ -28,9 +31,10 @@ export default function AboutPage() {
                 building modern web applications.
               </p>
               <p className="mb-6">
-                With over 3 years of experience in web development, I specialize
-                in creating responsive, user-friendly applications using the
-                latest technologies and best practices. I enjoy solving complex
+                With over {nowDate - startDate} years of dedicated learning and
+                working on project on the web, I specialize in creating
+                responsive, user-friendly applications using the latest
+                technologies and best practices. I enjoy solving complex
                 problems and turning ideas into reality through clean, efficient
                 code.
               </p>
