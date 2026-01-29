@@ -6,9 +6,14 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Menu } from 'lucide-react'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import { Separator } from '@/components/ui/separator'
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import Image from 'next/image'
 
 const routes = [
@@ -56,9 +61,9 @@ export function Navbar() {
         </div>
 
         <nav className="hidden ms-auto mr-6 md:flex gap-6">
-          {routes.map((route) => (
+          {routes.map((route, index) => (
             <Link
-              key={route.href}
+              key={index}
               href={route.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-primary',
@@ -81,12 +86,12 @@ export function Navbar() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" aria-describedby={undefined}>
+              <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <nav className="flex flex-col gap-4 mt-8">
                 {routes.map((route) => (
-                  <>
+                  <Fragment key={route.href}>
                     <Link
-                      key={route.href}
                       href={route.href}
                       onClick={() => setOpen(false)}
                       className={cn(
@@ -99,7 +104,7 @@ export function Navbar() {
                       {route.label}
                     </Link>
                     <Separator />
-                  </>
+                  </Fragment>
                 ))}
               </nav>
             </SheetContent>
