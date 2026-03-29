@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
-  const startDate = new Date(2021, 1, 1).getFullYear()
+  const startDate = new Date(2024, 2, 1).getFullYear()
   const nowDate = new Date().getFullYear()
 
   return (
