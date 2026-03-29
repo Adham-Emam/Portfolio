@@ -10,7 +10,7 @@ import { Loader2 } from 'lucide-react'
 export const revalidate = 60
 
 export function TechStack() {
-  const [filter, setFilter] = useState('all')
+  const [filter, setFilter] = useState<null | string>(null)
   const [technologies, setTechnologies] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -35,21 +35,20 @@ export function TechStack() {
     fetchData()
   }, [])
 
-  const filteredTech =
-    filter === 'all'
-      ? technologies
-      : technologies.filter((tech) => tech.category === filter)
+  const filteredTech = filter
+    ? technologies.filter((tech) => tech.category === filter)
+    : technologies
 
   return (
     <div className="space-y-6">
       {/* Filter Badges */}
       <div className="flex flex-wrap justify-center gap-2">
-        {['all', 'frontend', 'backend', 'devops'].map((cat) => (
+        {['languages', 'frontend', 'backend', 'devops'].map((cat) => (
           <Badge
             key={cat}
             variant={filter === cat ? 'default' : 'outline'}
             className="cursor-pointer px-4 py-2"
-            onClick={() => setFilter(cat)}
+            onClick={() => (filter ? setFilter(null) : setFilter(cat))}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
           </Badge>
@@ -77,8 +76,8 @@ export function TechStack() {
                   className={cn(
                     'object-contain',
                     ['Next.js', 'Express.js', 'GitHub', 'Flask'].includes(
-                      tech.name
-                    ) && 'dark:invert'
+                      tech.name,
+                    ) && 'dark:invert',
                   )}
                 />
               </div>
