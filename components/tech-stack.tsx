@@ -48,7 +48,7 @@ export function TechStack() {
             key={cat}
             variant={filter === cat ? 'default' : 'outline'}
             className="cursor-pointer px-4 py-2"
-            onClick={() => (filter ? setFilter(null) : setFilter(cat))}
+            onClick={() => (filter === cat ? setFilter(null) : setFilter(cat))}
           >
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
           </Badge>
